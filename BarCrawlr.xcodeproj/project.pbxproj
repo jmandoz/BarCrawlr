@@ -13,6 +13,7 @@
 		A477C8D522E91522001CD1E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A477C8D322E91522001CD1E9 /* LaunchScreen.storyboard */; };
 		A477C8E422E91645001CD1E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8E322E91645001CD1E9 /* User.swift */; };
 		A477C8E822E91A9D001CD1E9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A477C8E722E91A9D001CD1E9 /* CloudKit.framework */; };
+		A477C8EC22EA6721001CD1E9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8EB22EA6721001CD1E9 /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		A477C8E322E91645001CD1E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A477C8E522E91A9A001CD1E9 /* BarCrawlr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BarCrawlr.entitlements; sourceTree = "<group>"; };
 		A477C8E722E91A9D001CD1E9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		A477C8EB22EA6721001CD1E9 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,8 @@
 		A477C8DD22E9158E001CD1E9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A477C8EA22EA670B001CD1E9 /* ModelController */,
+				A477C8E922EA6704001CD1E9 /* ViewController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -124,6 +128,21 @@
 				A477C8E722E91A9D001CD1E9 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A477C8E922EA6704001CD1E9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A477C8EB22EA6721001CD1E9 /* LogInViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A477C8EA22EA670B001CD1E9 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +226,7 @@
 			files = (
 				A477C8E422E91645001CD1E9 /* User.swift in Sources */,
 				A477C8CB22E91520001CD1E9 /* AppDelegate.swift in Sources */,
+				A477C8EC22EA6721001CD1E9 /* LogInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
