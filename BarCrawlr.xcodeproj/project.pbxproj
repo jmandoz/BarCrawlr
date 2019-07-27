@@ -13,7 +13,11 @@
 		A477C8D522E91522001CD1E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A477C8D322E91522001CD1E9 /* LaunchScreen.storyboard */; };
 		A477C8E422E91645001CD1E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8E322E91645001CD1E9 /* User.swift */; };
 		A477C8E822E91A9D001CD1E9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A477C8E722E91A9D001CD1E9 /* CloudKit.framework */; };
-		A477C8EC22EA6721001CD1E9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8EB22EA6721001CD1E9 /* LogInViewController.swift */; };
+		A477C8EE22EAB0AF001CD1E9 /* UserLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8ED22EAB0AF001CD1E9 /* UserLogInViewController.swift */; };
+		A477C8F022EAB211001CD1E9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A477C8EF22EAB210001CD1E9 /* Default-568h@2x.png */; };
+		A477C8F222EAB33B001CD1E9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8F122EAB33B001CD1E9 /* SignUpViewController.swift */; };
+		A477C8F422EBCD92001CD1E9 /* CloudKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8F322EBCD92001CD1E9 /* CloudKitController.swift */; };
+		A477C8F622EBD24C001CD1E9 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8F522EBD24C001CD1E9 /* UserController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +30,11 @@
 		A477C8E322E91645001CD1E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A477C8E522E91A9A001CD1E9 /* BarCrawlr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BarCrawlr.entitlements; sourceTree = "<group>"; };
 		A477C8E722E91A9D001CD1E9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		A477C8EB22EA6721001CD1E9 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		A477C8ED22EAB0AF001CD1E9 /* UserLogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogInViewController.swift; sourceTree = "<group>"; };
+		A477C8EF22EAB210001CD1E9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A477C8F122EAB33B001CD1E9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A477C8F322EBCD92001CD1E9 /* CloudKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitController.swift; sourceTree = "<group>"; };
+		A477C8F522EBD24C001CD1E9 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +52,7 @@
 		A477C8BE22E91520001CD1E9 = {
 			isa = PBXGroup;
 			children = (
+				A477C8EF22EAB210001CD1E9 /* Default-568h@2x.png */,
 				A477C8C922E91520001CD1E9 /* BarCrawlr */,
 				A477C8C822E91520001CD1E9 /* Products */,
 				A477C8E622E91A9D001CD1E9 /* Frameworks */,
@@ -133,7 +142,8 @@
 		A477C8E922EA6704001CD1E9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A477C8EB22EA6721001CD1E9 /* LogInViewController.swift */,
+				A477C8ED22EAB0AF001CD1E9 /* UserLogInViewController.swift */,
+				A477C8F122EAB33B001CD1E9 /* SignUpViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -141,6 +151,8 @@
 		A477C8EA22EA670B001CD1E9 /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
+				A477C8F322EBCD92001CD1E9 /* CloudKitController.swift */,
+				A477C8F522EBD24C001CD1E9 /* UserController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -212,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A477C8D522E91522001CD1E9 /* LaunchScreen.storyboard in Resources */,
+				A477C8F022EAB211001CD1E9 /* Default-568h@2x.png in Resources */,
 				A477C8D222E91522001CD1E9 /* Assets.xcassets in Resources */,
 				A477C8D022E91520001CD1E9 /* Main.storyboard in Resources */,
 			);
@@ -224,9 +237,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A477C8F622EBD24C001CD1E9 /* UserController.swift in Sources */,
+				A477C8EE22EAB0AF001CD1E9 /* UserLogInViewController.swift in Sources */,
 				A477C8E422E91645001CD1E9 /* User.swift in Sources */,
+				A477C8F222EAB33B001CD1E9 /* SignUpViewController.swift in Sources */,
+				A477C8F422EBCD92001CD1E9 /* CloudKitController.swift in Sources */,
 				A477C8CB22E91520001CD1E9 /* AppDelegate.swift in Sources */,
-				A477C8EC22EA6721001CD1E9 /* LogInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +391,7 @@
 				CODE_SIGN_ENTITLEMENTS = BarCrawlr/BarCrawlr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZLX8VSJT3;
-				INFOPLIST_FILE = BarCrawlr/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BarCrawlr/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,7 +410,7 @@
 				CODE_SIGN_ENTITLEMENTS = BarCrawlr/BarCrawlr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZLX8VSJT3;
-				INFOPLIST_FILE = BarCrawlr/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BarCrawlr/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
