@@ -18,14 +18,22 @@ class UserLogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        UserController.shared.fetchUser { (success) in
+            if success {
+                self.presentHomeView()
+            }
+        }
     }
     
     @IBAction func logInButtonTapped(_ sender: Any) {
         CloudKitController.shared.checkForiCloudUser()
     }
     
-
-    
-
+    func presentHomeView() {
+        DispatchQueue.main.async {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationVC")
+            self.present(homeViewController, animated: true)
+        }
+    }
 }

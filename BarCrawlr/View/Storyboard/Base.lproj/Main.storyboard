@@ -125,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czr-ze-6YU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2241" y="258"/>
+            <point key="canvasLocation" x="2230" y="3"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2ex-KV-blA">
@@ -144,6 +144,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdc-40-fLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="379.71014492753625" y="2.6785714285714284"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VfI-d6-xfb">
+            <objects>
+                <viewController id="SSA-3u-1M0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4vt-5j-G0b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amh-bd-R9m">
+                                <rect key="frame" x="155" y="133" width="104" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6mp-r9-0yx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WXx-V5-6Wr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UdP-RH-1HV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1289.8550724637682" y="699.77678571428567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jpM-tq-y52">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNavigationVC" automaticallyAdjustsScrollViewInsets="NO" id="7Kb-Eh-3LN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="olP-fC-S6g">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SSA-3u-1M0" kind="relationship" relationship="rootViewController" id="bDM-h1-vkm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iOG-2n-aFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="379.71014492753625" y="699.77678571428567"/>
         </scene>
     </scenes>
 </document>
