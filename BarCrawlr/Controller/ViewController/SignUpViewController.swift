@@ -9,12 +9,39 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
-
+    
+    @IBOutlet weak var usernameTextField: UITextField!
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func createAccountButtonTapped(_ sender: Any) {
+        guard let username = usernameTextField.text, !username.isEmpty, let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty, let passwordConfirm = confirmPasswordTextField.text, !passwordConfirm.isEmpty else {return}
+        if password == passwordConfirm {
+            UserController.shared.createUserWith(userName: username, email: email, password: password) { (user) in
+                if user != nil && password == passwordConfirm {
+                    self.presentHomeView()
+                }
+            }
+        } else {
+            print("Password did not match")
+        }
+    }
+    
+    func presentHomeView() {
+        DispatchQueue.main.async {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationVC")
+            self.present(homeViewController, animated: true)
+        }
+    }
 }
