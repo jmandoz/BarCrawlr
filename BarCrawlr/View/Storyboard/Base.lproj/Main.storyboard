@@ -69,10 +69,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="2ML-lN-XQc" userLabel="Text Fieldss">
-                                <rect key="frame" x="67" y="376" width="280" height="144"/>
+                                <rect key="frame" x="67" y="348.5" width="280" height="199"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vWA-2n-dhe">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Username..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eBA-29-mgQ">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="fLH-uS-P7S"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vWA-2n-dhe">
+                                        <rect key="frame" x="0.0" y="55" width="280" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="gAI-rG-pvC"/>
                                         </constraints>
@@ -81,7 +90,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HWA-n4-rtY">
-                                        <rect key="frame" x="0.0" y="55" width="280" height="34"/>
+                                        <rect key="frame" x="0.0" y="110" width="280" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="V2h-x7-jvM"/>
                                         </constraints>
@@ -90,7 +99,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EK6-bM-fgM">
-                                        <rect key="frame" x="0.0" y="110" width="280" height="34"/>
+                                        <rect key="frame" x="0.0" y="165" width="280" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="7Vq-d0-0yo"/>
                                         </constraints>
@@ -110,6 +119,9 @@
                                     <constraint firstAttribute="width" constant="200" id="G4k-Gv-LS4"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="createAccountButtonTapped:" destination="HRG-pt-G2a" eventType="touchUpInside" id="eBH-iJ-h4n"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -122,6 +134,12 @@
                         <viewLayoutGuide key="safeArea" id="RvD-KA-LTD"/>
                     </view>
                     <navigationItem key="navigationItem" id="4aL-Af-WVr"/>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="EK6-bM-fgM" id="6sn-1a-b5x"/>
+                        <outlet property="emailTextField" destination="vWA-2n-dhe" id="zUb-bp-zpo"/>
+                        <outlet property="passwordTextField" destination="HWA-n4-rtY" id="Hhr-JY-WBw"/>
+                        <outlet property="usernameTextField" destination="eBA-29-mgQ" id="F9E-MM-dLa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czr-ze-6YU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,6 +166,7 @@
         <!--View Controller-->
         <scene sceneID="VfI-d6-xfb">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UdP-RH-1HV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="SSA-3u-1M0" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4vt-5j-G0b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -160,19 +179,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uoI-Yo-imm">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="mtL-3o-SAt"/>
+                                    <tabBarItem title="BarCrawls" id="pt8-1T-OJR"/>
+                                    <tabBarItem systemItem="more" id="hE2-Dn-rbq"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6mp-r9-0yx"/>
                     </view>
                     <navigationItem key="navigationItem" id="WXx-V5-6Wr"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UdP-RH-1HV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1289.8550724637682" y="699.77678571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jpM-tq-y52">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iOG-2n-aFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="HomeNavigationVC" automaticallyAdjustsScrollViewInsets="NO" id="7Kb-Eh-3LN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="olP-fC-S6g">
@@ -184,7 +213,6 @@
                         <segue destination="SSA-3u-1M0" kind="relationship" relationship="rootViewController" id="bDM-h1-vkm"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iOG-2n-aFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="379.71014492753625" y="699.77678571428567"/>
         </scene>
