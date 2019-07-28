@@ -18,6 +18,13 @@
 		A477C8F222EAB33B001CD1E9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8F122EAB33B001CD1E9 /* SignUpViewController.swift */; };
 		A477C8F422EBCD92001CD1E9 /* CloudKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8F322EBCD92001CD1E9 /* CloudKitController.swift */; };
 		A477C8F622EBD24C001CD1E9 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8F522EBD24C001CD1E9 /* UserController.swift */; };
+		A477C8FA22ED1FBA001CD1E9 /* Bars.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8F922ED1FBA001CD1E9 /* Bars.swift */; };
+		A477C8FC22ED2B45001CD1E9 /* SelectedBarsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8FB22ED2B45001CD1E9 /* SelectedBarsListTableViewCell.swift */; };
+		A477C8FE22ED30E0001CD1E9 /* SelectedBarsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8FD22ED30E0001CD1E9 /* SelectedBarsTableView.swift */; };
+		A477C90022ED32E7001CD1E9 /* ChooseBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8FF22ED32E7001CD1E9 /* ChooseBarTableViewController.swift */; };
+		A477C90222ED37B8001CD1E9 /* BarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C90122ED37B8001CD1E9 /* BarController.swift */; };
+		A477C90422ED481C001CD1E9 /* CoreLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C90322ED481C001CD1E9 /* CoreLocationController.swift */; };
+		A477C90622ED4A3D001CD1E9 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C90522ED4A3D001CD1E9 /* HomePageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +42,13 @@
 		A477C8F122EAB33B001CD1E9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A477C8F322EBCD92001CD1E9 /* CloudKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitController.swift; sourceTree = "<group>"; };
 		A477C8F522EBD24C001CD1E9 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		A477C8F922ED1FBA001CD1E9 /* Bars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bars.swift; sourceTree = "<group>"; };
+		A477C8FB22ED2B45001CD1E9 /* SelectedBarsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBarsListTableViewCell.swift; sourceTree = "<group>"; };
+		A477C8FD22ED30E0001CD1E9 /* SelectedBarsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectedBarsTableView.swift; path = BarCrawlr/View/SelectedBarsTableView.swift; sourceTree = SOURCE_ROOT; };
+		A477C8FF22ED32E7001CD1E9 /* ChooseBarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBarTableViewController.swift; sourceTree = "<group>"; };
+		A477C90122ED37B8001CD1E9 /* BarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarController.swift; sourceTree = "<group>"; };
+		A477C90322ED481C001CD1E9 /* CoreLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationController.swift; sourceTree = "<group>"; };
+		A477C90522ED4A3D001CD1E9 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				A477C8E022E915AD001CD1E9 /* Storyboard */,
+				A477C8FB22ED2B45001CD1E9 /* SelectedBarsListTableViewCell.swift */,
+				A477C8FD22ED30E0001CD1E9 /* SelectedBarsTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				A477C8E322E91645001CD1E9 /* User.swift */,
+				A477C8F922ED1FBA001CD1E9 /* Bars.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +161,8 @@
 			children = (
 				A477C8ED22EAB0AF001CD1E9 /* UserLogInViewController.swift */,
 				A477C8F122EAB33B001CD1E9 /* SignUpViewController.swift */,
+				A477C90522ED4A3D001CD1E9 /* HomePageViewController.swift */,
+				A477C8FF22ED32E7001CD1E9 /* ChooseBarTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -153,6 +172,8 @@
 			children = (
 				A477C8F322EBCD92001CD1E9 /* CloudKitController.swift */,
 				A477C8F522EBD24C001CD1E9 /* UserController.swift */,
+				A477C90122ED37B8001CD1E9 /* BarController.swift */,
+				A477C90322ED481C001CD1E9 /* CoreLocationController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -239,10 +260,17 @@
 			files = (
 				A477C8F622EBD24C001CD1E9 /* UserController.swift in Sources */,
 				A477C8EE22EAB0AF001CD1E9 /* UserLogInViewController.swift in Sources */,
+				A477C8FE22ED30E0001CD1E9 /* SelectedBarsTableView.swift in Sources */,
 				A477C8E422E91645001CD1E9 /* User.swift in Sources */,
 				A477C8F222EAB33B001CD1E9 /* SignUpViewController.swift in Sources */,
 				A477C8F422EBCD92001CD1E9 /* CloudKitController.swift in Sources */,
+				A477C90222ED37B8001CD1E9 /* BarController.swift in Sources */,
+				A477C90622ED4A3D001CD1E9 /* HomePageViewController.swift in Sources */,
 				A477C8CB22E91520001CD1E9 /* AppDelegate.swift in Sources */,
+				A477C8FC22ED2B45001CD1E9 /* SelectedBarsListTableViewCell.swift in Sources */,
+				A477C90422ED481C001CD1E9 /* CoreLocationController.swift in Sources */,
+				A477C90022ED32E7001CD1E9 /* ChooseBarTableViewController.swift in Sources */,
+				A477C8FA22ED1FBA001CD1E9 /* Bars.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
