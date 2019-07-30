@@ -13,8 +13,18 @@ class CoreLocationController {
     
     static let shared = CoreLocationController()
     
-    let locationManager = CLLocationManager()
+    var userLocation: CLLocationManager?
     
+    let locationManager: CLLocationManager = CLLocationManager()
     
-    
+    func activateLocationServices() {
+        if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            locationManager.startUpdatingLocation()
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
 }
+
+
