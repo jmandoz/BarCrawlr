@@ -40,8 +40,8 @@ class SignUpViewController: UIViewController {
     func presentHomeView() {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationVC")
-            self.present(homeViewController, animated: true)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "HomeVC")
+            self.present(viewController, animated: true)
         }
     }
 }
