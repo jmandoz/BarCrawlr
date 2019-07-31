@@ -74,4 +74,6 @@ class BarController {
             completion(image)
         } .resume()
     }
+    
+    
 }

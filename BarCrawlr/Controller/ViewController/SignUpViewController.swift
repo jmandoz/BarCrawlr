@@ -20,15 +20,13 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
         guard let username = usernameTextField.text, !username.isEmpty, let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty, let passwordConfirm = confirmPasswordTextField.text, !passwordConfirm.isEmpty else {return}
         if password == passwordConfirm {
             UserController.shared.createUserWith(userName: username, email: email, password: password) { (user) in
-                if user != nil && password == passwordConfirm {
+                if user != nil {
                     self.presentHomeView()
                 }
             }

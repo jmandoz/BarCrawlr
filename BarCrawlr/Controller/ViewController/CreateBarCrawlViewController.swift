@@ -10,10 +10,10 @@ import UIKit
 import CoreLocation
 
 class CreateBarCrawlViewController: UIViewController {
-
-    var locationManager = CLLocationManager()
-    
-    var currentLocation: CLLocation?
+//
+//    var locationManager = CLLocationManager()
+//
+//    var currentLocation: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,17 +34,17 @@ class CreateBarCrawlViewController: UIViewController {
   
 }
 
-extension CreateBarCrawlViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse || status == .authorizedAlways {
-            locationManager.startUpdatingLocation()
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if currentLocation == nil {
-            currentLocation = locations.first
-        }
-    }
-}
+//extension CreateBarCrawlViewController: CLLocationManagerDelegate {
+//
+//    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+//        if status == .authorizedWhenInUse || status == .authorizedAlways {
+//            locationManager.startUpdatingLocation()
+//        }
+//    }
+//
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        if currentLocation == nil {
+//            currentLocation = locations.first
+//        }
+//    }
+//}

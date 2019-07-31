@@ -13,7 +13,7 @@ class CloudKitController {
     
     static let shared = CloudKitController()
     
-    let privateDB = CKContainer.default().privateCloudDatabase
+    let publicDB = CKContainer.default().publicCloudDatabase
     
     //CRUD
     
