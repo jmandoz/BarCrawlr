@@ -90,15 +90,18 @@ class ChooseBarTableViewController: UITableViewController {
      }
      */
     
-    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+        if segue.identifier == "toBarDetailVC" {
+            guard let index = tableView.indexPathForSelectedRow?.row else {return}
+            let destinationVC = segue.destination as? BarDetailViewController
+            let bar = barItems[index]
+            destinationVC?.barLanding = bar
+        }
      }
-     */
+ 
     
 }
 

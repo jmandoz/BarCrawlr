@@ -14,15 +14,17 @@ class User {
     var username: String
     var password: String
     var email: String
+    var barCrawls: [BarCrawl]
     //CloudKit Portoperties
     var ckRecordID: CKRecord.ID
     var appleUserReference: CKRecord.Reference
     
     //Designated Initializer
-    init(username: String, password: String, email: String, ckRecordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), appleUserReference: CKRecord.Reference) {
+    init(username: String, password: String, email: String, barCrawls: [BarCrawl] = [], ckRecordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString), appleUserReference: CKRecord.Reference) {
         self.username = username
         self.password = password
         self.email = email
+        self.barCrawls = barCrawls
         self.ckRecordID = ckRecordID
         self.appleUserReference = appleUserReference
     }
