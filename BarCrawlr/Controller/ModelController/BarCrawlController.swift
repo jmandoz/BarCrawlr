@@ -13,15 +13,15 @@ class BarCrawlController {
     
     static let shared = BarCrawlController()
     
-    var barCrawl:[BarCrawl] = []
-    
+    var barCrawls:[BarCrawl] = []
+    var bars:[Bar] = []
     
     //CRUD
     
     //Create
     func createBarCrawl(withNme name: String, description: String, date: Date, user: User, completion: @escaping (BarCrawl?) -> Void) {
         let crawl = BarCrawl(name: name, description: description, crawlDate: date, user: user)
-        barCrawl.append(crawl)
+        barCrawls.append(crawl)
         let record = CKRecord(barCrawl: crawl)
         CloudKitController.shared.publicDB.save(record) { (record, error) in
             if let error = error {
@@ -31,6 +31,7 @@ class BarCrawlController {
             }
             guard let record = record,
             let barCrawl = BarCrawl(record: record, user: user) else {completion(nil); return}
+            self.barCrawls.append(barCrawl)
             completion(barCrawl)
         }
     }
@@ -67,7 +68,7 @@ class BarCrawlController {
             }
             guard let record = record else {completion(nil) ; return}
             let barCrawls = record.compactMap{BarCrawl(record: $0, user: user)}
-            self.barCrawl = barCrawls
+            self.barCrawls = barCrawls
             completion(barCrawls)
         }
     }
@@ -87,6 +88,7 @@ class BarCrawlController {
             }
             guard let record = record else {completion(nil) ; return}
             let bars = record.compactMap({Bar(record: $0, barCrawl: barCrawl)})
+            self.bars = bars
             completion(bars)
         }
     }

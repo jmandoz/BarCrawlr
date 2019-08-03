@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A422649622F1005B00E4739B /* BarCrawl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A422649522F1005B00E4739B /* BarCrawl.swift */; };
-		A422649822F1F2C300E4739B /* BarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A422649722F1F2C300E4739B /* BarDetailViewController.swift */; };
 		A422649A22F1FD9400E4739B /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A422649922F1FD9400E4739B /* Bar.swift */; };
 		A422649C22F21FA300E4739B /* BarCrawlController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A422649B22F21FA300E4739B /* BarCrawlController.swift */; };
 		A422649F22F2543C00E4739B /* NameBarCrawlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A422649E22F2543C00E4739B /* NameBarCrawlViewController.swift */; };
+		A42264A122F29BC800E4739B /* CreateBarCrawl.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42264A022F29BC800E4739B /* CreateBarCrawl.storyboard */; };
+		A42264A322F39F4700E4739B /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42264A222F39F4600E4739B /* UIViewExtension.swift */; };
+		A42264A722F4E44000E4739B /* BarCrawlView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42264A622F4E43F00E4739B /* BarCrawlView.storyboard */; };
 		A477C8CB22E91520001CD1E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8CA22E91520001CD1E9 /* AppDelegate.swift */; };
 		A477C8D022E91520001CD1E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A477C8CE22E91520001CD1E9 /* Main.storyboard */; };
 		A477C8D222E91522001CD1E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A477C8D122E91522001CD1E9 /* Assets.xcassets */; };
@@ -25,8 +27,6 @@
 		A477C8F622EBD24C001CD1E9 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8F522EBD24C001CD1E9 /* UserController.swift */; };
 		A477C8FA22ED1FBA001CD1E9 /* YelpData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8F922ED1FBA001CD1E9 /* YelpData.swift */; };
 		A477C8FC22ED2B45001CD1E9 /* SelectedBarsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8FB22ED2B45001CD1E9 /* SelectedBarsListTableViewCell.swift */; };
-		A477C8FE22ED30E0001CD1E9 /* SelectedBarsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8FD22ED30E0001CD1E9 /* SelectedBarsTableView.swift */; };
-		A477C90022ED32E7001CD1E9 /* ChooseBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8FF22ED32E7001CD1E9 /* ChooseBarTableViewController.swift */; };
 		A477C90222ED37B8001CD1E9 /* BarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C90122ED37B8001CD1E9 /* BarController.swift */; };
 		A477C90422ED481C001CD1E9 /* CoreLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C90322ED481C001CD1E9 /* CoreLocationController.swift */; };
 		A477C90622ED4A3D001CD1E9 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C90522ED4A3D001CD1E9 /* HomePageViewController.swift */; };
@@ -38,10 +38,12 @@
 
 /* Begin PBXFileReference section */
 		A422649522F1005B00E4739B /* BarCrawl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCrawl.swift; sourceTree = "<group>"; };
-		A422649722F1F2C300E4739B /* BarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarDetailViewController.swift; sourceTree = "<group>"; };
 		A422649922F1FD9400E4739B /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		A422649B22F21FA300E4739B /* BarCrawlController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCrawlController.swift; sourceTree = "<group>"; };
 		A422649E22F2543C00E4739B /* NameBarCrawlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameBarCrawlViewController.swift; sourceTree = "<group>"; };
+		A42264A022F29BC800E4739B /* CreateBarCrawl.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateBarCrawl.storyboard; sourceTree = "<group>"; };
+		A42264A222F39F4600E4739B /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		A42264A622F4E43F00E4739B /* BarCrawlView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BarCrawlView.storyboard; sourceTree = "<group>"; };
 		A477C8C722E91520001CD1E9 /* BarCrawlr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarCrawlr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A477C8CA22E91520001CD1E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A477C8CF22E91520001CD1E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,8 +60,6 @@
 		A477C8F522EBD24C001CD1E9 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		A477C8F922ED1FBA001CD1E9 /* YelpData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpData.swift; sourceTree = "<group>"; };
 		A477C8FB22ED2B45001CD1E9 /* SelectedBarsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedBarsListTableViewCell.swift; sourceTree = "<group>"; };
-		A477C8FD22ED30E0001CD1E9 /* SelectedBarsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectedBarsTableView.swift; path = BarCrawlr/View/SelectedBarsTableView.swift; sourceTree = SOURCE_ROOT; };
-		A477C8FF22ED32E7001CD1E9 /* ChooseBarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBarTableViewController.swift; sourceTree = "<group>"; };
 		A477C90122ED37B8001CD1E9 /* BarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarController.swift; sourceTree = "<group>"; };
 		A477C90322ED481C001CD1E9 /* CoreLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationController.swift; sourceTree = "<group>"; };
 		A477C90522ED4A3D001CD1E9 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
@@ -137,7 +137,6 @@
 			children = (
 				A477C8E022E915AD001CD1E9 /* Storyboards */,
 				A477C8FB22ED2B45001CD1E9 /* SelectedBarsListTableViewCell.swift */,
-				A477C8FD22ED30E0001CD1E9 /* SelectedBarsTableView.swift */,
 				A477C90F22EE986C001CD1E9 /* BarSearchResultsTableViewCell.swift */,
 			);
 			path = View;
@@ -158,8 +157,10 @@
 			isa = PBXGroup;
 			children = (
 				A477C8CE22E91520001CD1E9 /* Main.storyboard */,
-				A477C90922EE0668001CD1E9 /* Home.storyboard */,
 				A477C90722EE03E5001CD1E9 /* UserSignUp.storyboard */,
+				A477C90922EE0668001CD1E9 /* Home.storyboard */,
+				A42264A022F29BC800E4739B /* CreateBarCrawl.storyboard */,
+				A42264A622F4E43F00E4739B /* BarCrawlView.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -169,6 +170,7 @@
 			children = (
 				A477C8F322EBCD92001CD1E9 /* CloudKitController.swift */,
 				A477C90322ED481C001CD1E9 /* CoreLocationController.swift */,
+				A42264A222F39F4600E4739B /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,10 +189,8 @@
 				A477C8ED22EAB0AF001CD1E9 /* UserLogInViewController.swift */,
 				A477C8F122EAB33B001CD1E9 /* SignUpViewController.swift */,
 				A477C90522ED4A3D001CD1E9 /* HomePageViewController.swift */,
-				A477C90B22EE07E5001CD1E9 /* CreateBarCrawlViewController.swift */,
 				A422649E22F2543C00E4739B /* NameBarCrawlViewController.swift */,
-				A477C8FF22ED32E7001CD1E9 /* ChooseBarTableViewController.swift */,
-				A422649722F1F2C300E4739B /* BarDetailViewController.swift */,
+				A477C90B22EE07E5001CD1E9 /* CreateBarCrawlViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -272,11 +272,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A477C90822EE03E5001CD1E9 /* UserSignUp.storyboard in Resources */,
+				A42264A122F29BC800E4739B /* CreateBarCrawl.storyboard in Resources */,
 				A477C8D522E91522001CD1E9 /* LaunchScreen.storyboard in Resources */,
 				A477C8F022EAB211001CD1E9 /* Default-568h@2x.png in Resources */,
 				A477C90A22EE0668001CD1E9 /* Home.storyboard in Resources */,
 				A477C8D222E91522001CD1E9 /* Assets.xcassets in Resources */,
 				A477C8D022E91520001CD1E9 /* Main.storyboard in Resources */,
+				A42264A722F4E44000E4739B /* BarCrawlView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,23 +290,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				A477C8F622EBD24C001CD1E9 /* UserController.swift in Sources */,
-				A422649822F1F2C300E4739B /* BarDetailViewController.swift in Sources */,
 				A477C8EE22EAB0AF001CD1E9 /* UserLogInViewController.swift in Sources */,
 				A422649C22F21FA300E4739B /* BarCrawlController.swift in Sources */,
-				A477C8FE22ED30E0001CD1E9 /* SelectedBarsTableView.swift in Sources */,
 				A477C8E422E91645001CD1E9 /* User.swift in Sources */,
 				A477C8F222EAB33B001CD1E9 /* SignUpViewController.swift in Sources */,
 				A477C8F422EBCD92001CD1E9 /* CloudKitController.swift in Sources */,
 				A422649A22F1FD9400E4739B /* Bar.swift in Sources */,
 				A477C90222ED37B8001CD1E9 /* BarController.swift in Sources */,
 				A422649622F1005B00E4739B /* BarCrawl.swift in Sources */,
+				A42264A322F39F4700E4739B /* UIViewExtension.swift in Sources */,
 				A477C90622ED4A3D001CD1E9 /* HomePageViewController.swift in Sources */,
 				A477C90C22EE07E5001CD1E9 /* CreateBarCrawlViewController.swift in Sources */,
 				A477C8CB22E91520001CD1E9 /* AppDelegate.swift in Sources */,
 				A422649F22F2543C00E4739B /* NameBarCrawlViewController.swift in Sources */,
 				A477C8FC22ED2B45001CD1E9 /* SelectedBarsListTableViewCell.swift in Sources */,
 				A477C90422ED481C001CD1E9 /* CoreLocationController.swift in Sources */,
-				A477C90022ED32E7001CD1E9 /* ChooseBarTableViewController.swift in Sources */,
 				A477C91022EE986C001CD1E9 /* BarSearchResultsTableViewCell.swift in Sources */,
 				A477C8FA22ED1FBA001CD1E9 /* YelpData.swift in Sources */,
 			);

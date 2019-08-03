@@ -35,7 +35,7 @@ class UserLogInViewController: UIViewController {
     }
     
     func presentHomeView() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "HomeVC")
         self.present(viewController, animated: true)
     }

@@ -39,15 +39,6 @@ class HomePageViewController: UIViewController {
     */
     
     
-    @IBAction func createBarCrawlButtonTapped(_ sender: Any) {
-//        if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-//            activateLocationServices()
-//        } else {
-//            locationManager.requestWhenInUseAuthorization()
-//        }
-        
-    }
-    
     func activateLocationServices() {
         locationManager.startUpdatingLocation()
     }

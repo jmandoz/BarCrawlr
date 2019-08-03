@@ -18,7 +18,7 @@ struct Bars: Codable {
     let isOpen: Bool?
     let phone: String?
     let rating: Float
-//    let coordinates: [Coordinates]?
+    let coordinates: Coordinates
     let address: Location
     
     private enum CodingKeys: String, CodingKey {
@@ -27,16 +27,16 @@ struct Bars: Codable {
         case isOpen = "is_closed"
         case phone = "display_phone"
         case rating
-//        case coordinates
+        case coordinates
         case address = "location"
     }
 }
 
-//struct Coordinates: Codable {
-//    let longitude: Double?
-//    let latitude: Double?
-//}
-//
+struct Coordinates: Codable {
+    let longitude: Double?
+    let latitude: Double?
+}
+
 struct Location: Codable {
     let physicalAddress: String?
     let city: String

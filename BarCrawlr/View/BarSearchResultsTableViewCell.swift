@@ -9,7 +9,11 @@
 import UIKit
 
 class BarSearchResultsTableViewCell: UITableViewCell {
+    
+    var barCell: Bars?
 
+    weak var delegate: BarSearchResultsTableViewCellDelegate?
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var barImageView: UIImageView!
@@ -17,4 +21,16 @@ class BarSearchResultsTableViewCell: UITableViewCell {
     @IBOutlet weak var cityAndStateLabel: UILabel!
     @IBOutlet weak var zipLabel: UILabel!
     
+    @IBAction func addButtonTapped(_ sender: Any) {
+        delegate?.addBarButtonTapped(cell: self)
+    }
+    
+    @IBAction func detailsButtonTapped(_ sender: Any) {
+        delegate?.detailsButtonTapped(cell: self)
+    }
+}
+
+protocol BarSearchResultsTableViewCellDelegate: class {
+    func addBarButtonTapped(cell: BarSearchResultsTableViewCell)
+    func detailsButtonTapped(cell: BarSearchResultsTableViewCell)
 }
