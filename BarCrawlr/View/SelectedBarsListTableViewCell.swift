@@ -10,9 +10,9 @@ import UIKit
 
 class SelectedBarsListTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var BarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    
     @IBOutlet weak var addressLabel: UILabel!
     
-    
+    @IBOutlet weak var barCounter: UILabel!
 }

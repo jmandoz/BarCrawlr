@@ -9,13 +9,12 @@
 import UIKit
 
 class NameBarCrawlViewController: UIViewController {
-
+    
     @IBOutlet weak var crawlNameTextField: UITextField!
-    
     @IBOutlet weak var descriptionTextView: UITextView!
-    
     @IBOutlet weak var crawlDatePicker: UIDatePicker!
     
+    var barCrawlCreated: BarCrawl?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,22 +23,21 @@ class NameBarCrawlViewController: UIViewController {
     @IBAction func submitButtonTapped(_ sender: Any) {
         let crawlDate = crawlDatePicker.date
         guard let name = crawlNameTextField.text, !name.isEmpty, let description = descriptionTextView.text, !description.isEmpty, let user = UserController.shared.currentUser else {return}
-        BarCrawlController.shared.createBarCrawl(withNme: name, description: description, date: crawlDate, user: user) { (success) in
-            if success != nil {
-                
+        BarCrawlController.shared.createBarCrawl(withNme: name, description: description, date: crawlDate, user: user) { (barCrawlFromCompletion) in
+            if let barCrawl = barCrawlFromCompletion {
+                DispatchQueue.main.async {
+                    self.presentCreateBarCrawlVC(barCrawl: barCrawl)
+                }
             }
         }
-        
     }
     
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func presentCreateBarCrawlVC(barCrawl: BarCrawl) {
+        let storyboard = UIStoryboard(name: "CreateBarCrawl", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateCrawlVC") as? CreateBarCrawlViewController else { return }
+        viewController.barCrawl = barCrawl
+        self.present(viewController, animated: true)
     }
-    */
-
 }
