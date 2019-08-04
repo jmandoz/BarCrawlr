@@ -15,31 +15,39 @@ class CreateBarCrawlViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var listOfBarsTableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
-
-    
     
     //CLLocation Manager
     let locationManager = CoreLocationController.shared.locationManager
-    
     var currentLocation: CLLocationManager {
         return CoreLocationController.shared.locationManager
     }
     
     //Sources of Truth
     var barCrawl: BarCrawl?
-    
     var barItems: [Bars] = []
     
     //ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViews()
         activateButton()
+        hideDetailView()
         locationManager.delegate = self
         listOfBarsTableView.delegate = self
         listOfBarsTableView.dataSource = self
         listOfBarsTableView.estimatedRowHeight = UITableView.automaticDimension
         CoreLocationController.shared.activateLocationServices()
+        getMyRegion()
+        self.hideKeyboardWhenTappedAround()
+    }
+    
+    func getMyRegion() {
+        DispatchQueue.main.async {
+            guard let latitude = CoreLocationController.shared.locationManager.location?.coordinate.latitude, let longitude = CoreLocationController.shared.locationManager.location?.coordinate.longitude else {return}
+            let userCoordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            let mySpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+            let myRegion = MKCoordinateRegion(center: userCoordinates, span: mySpan)
+            self.mapView.setRegion(myRegion, animated: true)
+        }
     }
     
     override func loadView() {
@@ -49,6 +57,13 @@ class CreateBarCrawlViewController: UIViewController {
         setUpStackViews()
     }
     
+    
+    @IBAction func confirmButtonTapped(_ sender: Any) {
+        guard let currentBarCrawl = barCrawl else {return}
+        DispatchQueue.main.async {
+            self.presentBarCrawlVC(barCrawl: currentBarCrawl)
+        }
+    }
     
     
     func createAnnotations(barsInCrawl: [Bar]) {
@@ -74,6 +89,7 @@ class CreateBarCrawlViewController: UIViewController {
         self.view.addSubview(zipCodeDetailLabel)
         self.view.addSubview(closeButton)
         self.view.addSubview(barImage)
+        self.view.addSubview(visualEffectView)
         
     }
     
@@ -89,17 +105,46 @@ class CreateBarCrawlViewController: UIViewController {
         labelStackView.addArrangedSubview(closeButton)
     }
     
+    func barDetailPopUp() {
+        barDetailView.transform = CGAffineTransform(scaleX: 1.3, y: -1.3)
+        labelStackView.transform = CGAffineTransform(scaleX: 1.3, y: -1.3)
+        
+        UIView.animate(withDuration: 0.2) {
+            self.visualEffectView.alpha = 1
+            self.barDetailView.alpha = 1
+            self.labelStackView.alpha = 1
+            self.barDetailView.transform = CGAffineTransform.identity
+            self.labelStackView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func closePopUp() {
+        UIView.animate(withDuration: 0.1) {
+            self.barDetailView.alpha = 0
+            self.labelStackView.alpha = 0
+        }
+    }
+    
     //Creating safeArea
     var safeArea: UILayoutGuide {
         return self.view.safeAreaLayoutGuide
     }
     
     //MARK: - Initializing custom views
+    
     //Detail View
     let barDetailView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 30
-        
+        view.layer.cornerRadius = 10
+        view.backgroundColor = .white
+        return view
+    }()
+    
+    //Visual Effect View
+    let visualEffectView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .light)
+        let view = UIVisualEffectView(effect: blurEffect)
+        view.translatesAutoresizingMaskIntoConstraints = true
         return view
     }()
     
@@ -116,7 +161,7 @@ class CreateBarCrawlViewController: UIViewController {
     //ImageView
     let barImage: UIImageView = {
         let image = UIImageView()
-        image.layer.cornerRadius = 20
+        image.layer.cornerRadius = 7
         image.clipsToBounds = true
         image.contentMode = .scaleAspectFill
         return image
@@ -172,7 +217,7 @@ class CreateBarCrawlViewController: UIViewController {
         selectButton(sender)
         switch sender {
         case closeButton:
-            hideDetailView()
+            closePopUp()
         default:
             print("Button not found")
         }
@@ -189,29 +234,22 @@ class CreateBarCrawlViewController: UIViewController {
     
     //Hide Detail View
     func hideDetailView() {
-        barDetailView.isHidden = true
-        labelStackView.isHidden = true
-        barImage.isHidden = true
+        barDetailView.alpha = 0
+        labelStackView.alpha = 0
+        visualEffectView.alpha = 0
     }
     
     func showDetailView() {
-        barDetailView.isHidden = false
-        labelStackView.isHidden = false
-        barImage.isHidden = false
+        barDetailPopUp()
         barDetailView.addShadow()
-    }
-    
-    
-    //Configure the DetailView
-    func configureViews() {
-        hideDetailView()
-        barDetailView.backgroundColor = .white
+        visualEffectView.alpha = 0
     }
     
     //Constrain DetailView
     func constrainView() {
         barDetailView.anchor(top: safeArea.topAnchor, bottom: safeArea.bottomAnchor, leading: safeArea.leadingAnchor, trailing: safeArea.trailingAnchor, topPadding: 80, bottomPadding: -70, leadingPadding: 40, trailingPadding: -40)
         labelStackView.anchor(top: barDetailView.topAnchor, bottom: barDetailView.bottomAnchor, leading: barDetailView.leadingAnchor, trailing: barDetailView.trailingAnchor, topPadding: 10, bottomPadding: -10, leadingPadding: 10, trailingPadding: -10)
+        visualEffectView.anchor(top: barDetailView.topAnchor, bottom: barDetailView.bottomAnchor, leading: barDetailView.leadingAnchor, trailing: barDetailView.trailingAnchor, topPadding: 0, bottomPadding: 0, leadingPadding: 0, trailingPadding: 0)
     }
     
     
@@ -228,9 +266,9 @@ extension CreateBarCrawlViewController: UITableViewDelegate, UITableViewDataSour
         switch section {
         case 0:
             let titleLabel = UILabel()
-            titleLabel.isHidden = true
-            titleLabel.text = "Bars"
-            titleLabel.backgroundColor = .white
+            titleLabel.text = "Bars Selected ▾"
+            titleLabel.backgroundColor = UIColor(named: "headerBackground")
+            titleLabel.textColor = .white
             return titleLabel
         case 1:
             let titleLabel = UILabel()
@@ -285,6 +323,14 @@ extension CreateBarCrawlViewController: UITableViewDelegate, UITableViewDataSour
         default:
             return UITableViewCell()
         }
+    }
+    
+    //Segue function
+    func presentBarCrawlVC(barCrawl: BarCrawl) {
+        let storyboard = UIStoryboard(name: "BarCrawlView", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "BarCrawlVC") as? BarCrawlViewController else {return}
+        viewController.barCrawlLandingPad = barCrawl
+        self.present(viewController, animated: true)
     }
 }
 
@@ -350,6 +396,18 @@ extension CreateBarCrawlViewController: BarSearchResultsTableViewCellDelegate {
             }
         }
         showDetailView()
+    }
+}
+
+extension CreateBarCrawlViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateBarCrawlViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 

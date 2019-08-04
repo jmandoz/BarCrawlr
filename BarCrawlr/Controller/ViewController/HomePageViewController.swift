@@ -10,6 +10,8 @@ import UIKit
 import CoreLocation
 
 class HomePageViewController: UIViewController {
+    
+    var currentUser: User?
 
     let locationManager = CoreLocationController.shared.locationManager
     
@@ -23,9 +25,15 @@ class HomePageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+//    func presentMyBarCrawlsVC(user: User) {
+//        let storyboard = UIStoryboard(name: "MyCrawls", bundle: nil)
+//        guard let viewController = storyboard.instantiateViewController(withIdentifier: "MyBarCrawls") as? MyCrawlsViewController, let user = currentUser else {return}
+//        viewController.currentUser = user
+//        self.present(viewController, animated: true)
+//    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("View Appeared")
     }
 
     /*
