@@ -18,6 +18,7 @@ class NameBarCrawlViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func submitButtonTapped(_ sender: Any) {
@@ -39,5 +40,17 @@ class NameBarCrawlViewController: UIViewController {
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "CreateCrawlVC") as? CreateBarCrawlViewController else { return }
         viewController.barCrawl = barCrawl
         self.present(viewController, animated: true)
+    }
+}
+
+extension NameBarCrawlViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(NameBarCrawlViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
