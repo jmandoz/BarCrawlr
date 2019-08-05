@@ -12,7 +12,6 @@ class MyCrawlsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var numberOfBarsLabel: UILabel!
     @IBOutlet weak var dateAndTimeLabel: UILabel!
     
 }

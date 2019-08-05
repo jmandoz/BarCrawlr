@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yv2-PC-sLv">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="737"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="616.5"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5c-iM-m7y">
                                 <rect key="frame" x="10" y="54" width="42" height="21"/>
@@ -28,8 +28,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nc8-nH-xzw">
-                                <rect key="frame" x="0.0" y="571.5" width="414" height="290.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nc8-nH-xzw">
+                                <rect key="frame" x="0.0" y="616.5" width="414" height="245.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="barsInCrawlCell" rowHeight="63" id="dcy-9l-Wbr" customClass="BarCrawlViewTableViewCell" customModule="BarCrawlr" customModuleProvider="target">
@@ -86,8 +86,8 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eR-pj-pfc">
-                                <rect key="frame" x="358" y="54" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="337" y="79" width="67" height="30"/>
+                                <state key="normal" title="MyCrawls"/>
                                 <connections>
                                     <segue destination="CCb-QK-vcj" kind="show" id="jgc-Yb-9lW"/>
                                 </connections>
@@ -95,10 +95,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3eR-pj-pfc" firstAttribute="top" secondItem="RRm-c9-Axg" secondAttribute="top" constant="10" id="4JI-WE-wL4"/>
+                            <constraint firstItem="3eR-pj-pfc" firstAttribute="top" secondItem="RRm-c9-Axg" secondAttribute="top" constant="35" id="4JI-WE-wL4"/>
                             <constraint firstItem="RRm-c9-Axg" firstAttribute="bottom" secondItem="Nc8-nH-xzw" secondAttribute="bottom" id="5KD-st-uvL"/>
+                            <constraint firstItem="Nc8-nH-xzw" firstAttribute="top" secondItem="yv2-PC-sLv" secondAttribute="bottom" id="5fA-Sa-F0v"/>
                             <constraint firstItem="Nc8-nH-xzw" firstAttribute="leading" secondItem="RRm-c9-Axg" secondAttribute="leading" id="I76-rO-4Qw"/>
-                            <constraint firstItem="Nc8-nH-xzw" firstAttribute="centerY" secondItem="dQy-fv-ps3" secondAttribute="centerY" multiplier="1.6" id="KKs-d2-aLN"/>
+                            <constraint firstItem="Nc8-nH-xzw" firstAttribute="centerY" secondItem="dQy-fv-ps3" secondAttribute="centerY" multiplier="1.65" id="KKs-d2-aLN"/>
                             <constraint firstItem="yv2-PC-sLv" firstAttribute="leading" secondItem="RRm-c9-Axg" secondAttribute="leading" id="dOT-h0-qGq"/>
                             <constraint firstItem="d5c-iM-m7y" firstAttribute="top" secondItem="RRm-c9-Axg" secondAttribute="top" constant="10" id="eXK-CI-xIE"/>
                             <constraint firstItem="yv2-PC-sLv" firstAttribute="top" secondItem="dQy-fv-ps3" secondAttribute="top" id="fiP-iQ-iHw"/>
@@ -106,7 +107,6 @@
                             <constraint firstItem="d5c-iM-m7y" firstAttribute="leading" secondItem="RRm-c9-Axg" secondAttribute="leading" constant="10" id="oAT-mj-9m4"/>
                             <constraint firstItem="RRm-c9-Axg" firstAttribute="trailing" secondItem="Nc8-nH-xzw" secondAttribute="trailing" id="rog-ST-ZH1"/>
                             <constraint firstItem="RRm-c9-Axg" firstAttribute="trailing" secondItem="3eR-pj-pfc" secondAttribute="trailing" constant="10" id="u2u-hQ-WgC"/>
-                            <constraint firstItem="RRm-c9-Axg" firstAttribute="bottom" secondItem="yv2-PC-sLv" secondAttribute="bottom" constant="125" id="uBP-lQ-AEC"/>
                             <constraint firstItem="Nc8-nH-xzw" firstAttribute="centerX" secondItem="yv2-PC-sLv" secondAttribute="centerX" id="wGY-Qm-PzA"/>
                             <constraint firstItem="yv2-PC-sLv" firstAttribute="trailing" secondItem="RRm-c9-Axg" secondAttribute="trailing" id="zzm-Vz-i6i"/>
                         </constraints>

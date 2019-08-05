@@ -11,11 +11,8 @@ import UIKit
 class SignUpViewController: UIViewController {
     
     @IBOutlet weak var usernameTextField: UITextField!
-    
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
     override func viewDidLoad() {
@@ -37,7 +34,7 @@ class SignUpViewController: UIViewController {
     
     func presentHomeView() {
         DispatchQueue.main.async {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "HomeVC")
             self.present(viewController, animated: true)
         }

@@ -106,8 +106,8 @@ class CreateBarCrawlViewController: UIViewController {
     }
     
     func barDetailPopUp() {
-        barDetailView.transform = CGAffineTransform(scaleX: 1.3, y: -1.3)
-        labelStackView.transform = CGAffineTransform(scaleX: 1.3, y: -1.3)
+        barDetailView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        labelStackView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         
         UIView.animate(withDuration: 0.2) {
             self.visualEffectView.alpha = 1

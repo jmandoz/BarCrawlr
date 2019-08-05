@@ -60,5 +60,4 @@ struct BarCrawlConstants {
     static let barsKey = "bars"
     static let userKey = "user"
     static let userReferenceKey = "userReference"
-    
 }

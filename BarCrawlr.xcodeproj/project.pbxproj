@@ -19,7 +19,6 @@
 		A42264AF22F600E300E4739B /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42264AE22F600E300E4739B /* DateExtension.swift */; };
 		A42264B122F61CD000E4739B /* MyCrawls.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42264B022F61CD000E4739B /* MyCrawls.storyboard */; };
 		A42264B322F6209500E4739B /* MyCrawlsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42264B222F6209500E4739B /* MyCrawlsTableViewCell.swift */; };
-		A42264B522F620B600E4739B /* BarListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42264B422F620B600E4739B /* BarListCollectionViewCell.swift */; };
 		A42264B722F620F000E4739B /* MyCrawlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42264B622F620F000E4739B /* MyCrawlsViewController.swift */; };
 		A477C8CB22E91520001CD1E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8CA22E91520001CD1E9 /* AppDelegate.swift */; };
 		A477C8D022E91520001CD1E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A477C8CE22E91520001CD1E9 /* Main.storyboard */; };
@@ -56,7 +55,6 @@
 		A42264AE22F600E300E4739B /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		A42264B022F61CD000E4739B /* MyCrawls.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyCrawls.storyboard; sourceTree = "<group>"; };
 		A42264B222F6209500E4739B /* MyCrawlsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCrawlsTableViewCell.swift; sourceTree = "<group>"; };
-		A42264B422F620B600E4739B /* BarListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarListCollectionViewCell.swift; sourceTree = "<group>"; };
 		A42264B622F620F000E4739B /* MyCrawlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCrawlsViewController.swift; sourceTree = "<group>"; };
 		A477C8C722E91520001CD1E9 /* BarCrawlr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarCrawlr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A477C8CA22E91520001CD1E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 				A477C90F22EE986C001CD1E9 /* BarSearchResultsTableViewCell.swift */,
 				A42264AA22F5DE7E00E4739B /* BarCrawlViewTableViewCell.swift */,
 				A42264B222F6209500E4739B /* MyCrawlsTableViewCell.swift */,
-				A42264B422F620B600E4739B /* BarListCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -332,7 +329,6 @@
 				A422649F22F2543C00E4739B /* NameBarCrawlViewController.swift in Sources */,
 				A477C8FC22ED2B45001CD1E9 /* SelectedBarsListTableViewCell.swift in Sources */,
 				A477C90422ED481C001CD1E9 /* CoreLocationController.swift in Sources */,
-				A42264B522F620B600E4739B /* BarListCollectionViewCell.swift in Sources */,
 				A477C91022EE986C001CD1E9 /* BarSearchResultsTableViewCell.swift in Sources */,
 				A477C8FA22ED1FBA001CD1E9 /* YelpData.swift in Sources */,
 			);

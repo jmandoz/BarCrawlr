@@ -155,20 +155,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f9W-eF-UqN">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="479"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="479" id="XOD-1o-3uh"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="430"/>
                             </mapView>
-                            <searchBar contentMode="redraw" placeholder="Search for Bars " translatesAutoresizingMaskIntoConstraints="NO" id="87q-tP-SV7">
-                                <rect key="frame" x="0.0" y="431" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="wpj-uu-O83" id="AQ7-x7-9pJ"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zK6-Xl-6RH">
-                                <rect key="frame" x="0.0" y="487" width="414" height="326"/>
+                                <rect key="frame" x="0.0" y="486" width="414" height="327"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="selectedBarsCell" rowHeight="41" id="Fe1-u5-VCU" customClass="SelectedBarsListTableViewCell" customModule="BarCrawlr" customModuleProvider="target">
@@ -324,20 +314,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="171" translatesAutoresizingMaskIntoConstraints="NO" id="Efd-R7-bhO">
-                                <rect key="frame" x="20" y="71.5" width="374" height="36"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="210" translatesAutoresizingMaskIntoConstraints="NO" id="Efd-R7-bhO">
+                                <rect key="frame" x="20" y="62.5" width="374" height="32"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFv-TY-fw7">
-                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFv-TY-fw7">
+                                        <rect key="frame" x="0.0" y="0.0" width="82" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="Back"/>
                                         <connections>
                                             <segue destination="nTp-OU-nxo" kind="show" id="nSp-ic-9A9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpZ-Ng-tZF">
-                                        <rect key="frame" x="272.5" y="0.0" width="101.5" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpZ-Ng-tZF">
+                                        <rect key="frame" x="292" y="0.0" width="82" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="Confirm"/>
                                         <connections>
                                             <action selector="confirmButtonTapped:" destination="wpj-uu-O83" eventType="touchUpInside" id="jfz-eU-SgY"/>
@@ -345,22 +335,30 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <searchBar contentMode="redraw" placeholder="Search for Bars " translatesAutoresizingMaskIntoConstraints="NO" id="87q-tP-SV7">
+                                <rect key="frame" x="0.0" y="430" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wpj-uu-O83" id="AQ7-x7-9pJ"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zK6-Xl-6RH" firstAttribute="top" secondItem="f9W-eF-UqN" secondAttribute="bottom" constant="8" id="5KX-pZ-H6t"/>
                             <constraint firstItem="xF8-jF-lOJ" firstAttribute="trailing" secondItem="zK6-Xl-6RH" secondAttribute="trailing" id="5q3-eG-NXv"/>
+                            <constraint firstItem="zK6-Xl-6RH" firstAttribute="centerY" secondItem="sC8-Ku-ham" secondAttribute="centerY" multiplier="1.45" id="8Bb-bb-RP0"/>
                             <constraint firstItem="xF8-jF-lOJ" firstAttribute="bottom" secondItem="zK6-Xl-6RH" secondAttribute="bottom" id="8fJ-yd-4kC"/>
                             <constraint firstItem="xF8-jF-lOJ" firstAttribute="trailing" secondItem="Efd-R7-bhO" secondAttribute="trailing" constant="20" id="BeQ-gY-mJ6"/>
                             <constraint firstItem="Efd-R7-bhO" firstAttribute="centerX" secondItem="sC8-Ku-ham" secondAttribute="centerX" id="ERq-hc-nje"/>
                             <constraint firstItem="87q-tP-SV7" firstAttribute="leading" secondItem="xF8-jF-lOJ" secondAttribute="leading" id="Htn-q3-oYI"/>
-                            <constraint firstItem="f9W-eF-UqN" firstAttribute="trailing" secondItem="zK6-Xl-6RH" secondAttribute="trailing" id="Rbm-wE-ntz"/>
+                            <constraint firstItem="87q-tP-SV7" firstAttribute="top" secondItem="f9W-eF-UqN" secondAttribute="bottom" id="L0Z-Rw-0sF"/>
+                            <constraint firstItem="zK6-Xl-6RH" firstAttribute="top" secondItem="87q-tP-SV7" secondAttribute="bottom" id="Lka-52-tJe"/>
+                            <constraint firstItem="f9W-eF-UqN" firstAttribute="top" secondItem="sC8-Ku-ham" secondAttribute="top" id="Pa7-nD-hwv"/>
+                            <constraint firstItem="f9W-eF-UqN" firstAttribute="trailing" secondItem="xF8-jF-lOJ" secondAttribute="trailing" id="Suh-sO-9LZ"/>
                             <constraint firstItem="Efd-R7-bhO" firstAttribute="leading" secondItem="xF8-jF-lOJ" secondAttribute="leading" constant="20" id="WF4-jT-XQ8"/>
-                            <constraint firstItem="f9W-eF-UqN" firstAttribute="leading" secondItem="zK6-Xl-6RH" secondAttribute="leading" id="b9D-Yb-qEJ"/>
-                            <constraint firstItem="f9W-eF-UqN" firstAttribute="top" secondItem="sC8-Ku-ham" secondAttribute="top" id="iBo-AM-21J"/>
-                            <constraint firstItem="Efd-R7-bhO" firstAttribute="centerY" secondItem="sC8-Ku-ham" secondAttribute="centerY" multiplier="0.2" id="keH-Gb-GyI"/>
+                            <constraint firstItem="f9W-eF-UqN" firstAttribute="leading" secondItem="xF8-jF-lOJ" secondAttribute="leading" id="ZTD-nL-sKC"/>
+                            <constraint firstItem="Efd-R7-bhO" firstAttribute="centerY" secondItem="sC8-Ku-ham" secondAttribute="centerY" multiplier="0.175" id="keH-Gb-GyI"/>
                             <constraint firstItem="zK6-Xl-6RH" firstAttribute="leading" secondItem="xF8-jF-lOJ" secondAttribute="leading" id="nnd-TP-VqO"/>
-                            <constraint firstItem="zK6-Xl-6RH" firstAttribute="top" secondItem="87q-tP-SV7" secondAttribute="bottom" id="oz1-3A-6vo"/>
                             <constraint firstItem="87q-tP-SV7" firstAttribute="trailing" secondItem="xF8-jF-lOJ" secondAttribute="trailing" id="xcC-VX-rde"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xF8-jF-lOJ"/>
@@ -379,6 +377,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kO4-jV-gVy"/>
+        <segue reference="nSp-ic-9A9"/>
     </inferredMetricsTieBreakers>
 </document>
