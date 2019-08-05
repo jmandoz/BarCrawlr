@@ -10,6 +10,7 @@ import UIKit
 
 class MyCrawlsViewController: UIViewController {
     
+    var userBarCrawls: [BarCrawl] = []
     
     @IBOutlet weak var myCrawlsTableView: UITableView!
     
@@ -17,40 +18,39 @@ class MyCrawlsViewController: UIViewController {
         super.viewDidLoad()
         myCrawlsTableView.delegate = self
         myCrawlsTableView.dataSource = self
-        self.myCrawlsTableView.reloadData()
-        // Do any additional setup after loading the view.
+        guard let currentUser = UserController.shared.currentUser else {return}
+        BarCrawlController.shared.fetchBarCrawls(user: currentUser) { (CrawlsFromCompletion) in
+            if let barCrawl = CrawlsFromCompletion {
+                self.userBarCrawls = barCrawl
+                DispatchQueue.main.async {
+                    self.myCrawlsTableView.reloadData()
+                }
+            }
+        }
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toBarCrawlVC" {
+            guard let index = myCrawlsTableView.indexPathForSelectedRow?.row else {return}
+            let destinationVC = segue.destination as? BarCrawlViewController
+            let selectedBarCrawl = userBarCrawls[index]
+            destinationVC?.barCrawlLandingPad = selectedBarCrawl
+        }
     }
-    */
-
 }
 
 extension MyCrawlsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let userBarCrawls = UserController.shared.currentUser?.barCrawls.count else {return 0}
-        return userBarCrawls
+        let userCrawls = userBarCrawls.count
+        return userCrawls
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "myCrawlsCell", for: indexPath) as? MyCrawlsTableViewCell else {return UITableViewCell()}
-        guard let user = UserController.shared.currentUser?.barCrawls[indexPath.row] else {return UITableViewCell()}
-        
-        cell.nameLabel.text = user.name
-        cell.descriptionLabel.text = user.description
-        cell.numberOfBarsLabel.text = "\(user.bars.count)"
-        cell.dateAndTimeLabel.text = "\(user.crawlDate)"
-        
+        let userCrawls = userBarCrawls[indexPath.row]
+        cell.nameLabel.text = userCrawls.name
+        cell.descriptionLabel.text = userCrawls.description
+        cell.dateAndTimeLabel.text = "\(userCrawls.crawlDate.formatDate())"
         return cell
     }
-    
-    
 }

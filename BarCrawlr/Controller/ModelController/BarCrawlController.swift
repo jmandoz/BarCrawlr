@@ -14,7 +14,6 @@ class BarCrawlController {
     static let shared = BarCrawlController()
     
     var barCrawls:[BarCrawl] = []
-    var bars:[Bar] = []
     
     //CRUD
     
@@ -88,7 +87,6 @@ class BarCrawlController {
             }
             guard let record = record else {completion(nil) ; return}
             let bars = record.compactMap({Bar(record: $0, barCrawl: barCrawl)})
-            self.bars = bars
             completion(bars)
         }
     }

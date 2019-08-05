@@ -13,8 +13,6 @@ class CoreLocationController {
     
     static let shared = CoreLocationController()
     
-    var userLocation: CLLocationManager?
-    
     let locationManager: CLLocationManager = CLLocationManager()
     
     func activateLocationServices() {

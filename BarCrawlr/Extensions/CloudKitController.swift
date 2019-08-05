@@ -39,7 +39,6 @@ class CloudKitController {
                 case .restricted : print("restricted")
                 case .noAccount : print("No Account Exists")
                 case .couldNotDetermine : print("Account could not be determined")
-                    
                 @unknown default:
                     fatalError()
                 }
@@ -72,5 +71,4 @@ class CloudKitController {
             completion(record)
         }
     }
-    
 }
