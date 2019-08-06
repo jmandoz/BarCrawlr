@@ -28,7 +28,7 @@ class MyCrawlsViewController: UIViewController {
             }
         }
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toBarCrawlVC" {
             guard let index = myCrawlsTableView.indexPathForSelectedRow?.row else {return}
@@ -43,6 +43,21 @@ extension MyCrawlsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let userCrawls = userBarCrawls.count
         return userCrawls
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let barCrawl = userBarCrawls[indexPath.row]
+            self.userBarCrawls.remove(at: indexPath.row)
+            BarCrawlController.shared.deleteBarCrawl(barCrawl: barCrawl) { (success) in
+                if success {
+                    DispatchQueue.main.async {
+                        tableView.deleteRows(at: [indexPath], with: .fade)
+                        self.myCrawlsTableView.reloadData()
+                    }
+                }
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

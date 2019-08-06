@@ -61,3 +61,9 @@ struct BarCrawlConstants {
     static let userKey = "user"
     static let userReferenceKey = "userReference"
 }
+
+extension BarCrawl: Equatable {
+    static func == (lhs: BarCrawl, rhs: BarCrawl) -> Bool {
+        return lhs.recordID == rhs.recordID
+    }
+}
