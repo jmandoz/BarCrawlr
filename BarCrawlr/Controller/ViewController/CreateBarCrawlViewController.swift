@@ -31,12 +31,14 @@ class CreateBarCrawlViewController: UIViewController {
         super.viewDidLoad()
         activateButton()
         hideDetailView()
+        listOfBarsTableView.isEditing = true
         locationManager.delegate = self
         listOfBarsTableView.delegate = self
         listOfBarsTableView.dataSource = self
         listOfBarsTableView.estimatedRowHeight = UITableView.automaticDimension
         CoreLocationController.shared.activateLocationServices()
         getMyRegion()
+        findBarsFromCurrentLocation(searchTerm: "Bar")
         self.hideKeyboardWhenTappedAround()
     }
     
@@ -44,7 +46,7 @@ class CreateBarCrawlViewController: UIViewController {
         DispatchQueue.main.async {
             guard let latitude = CoreLocationController.shared.locationManager.location?.coordinate.latitude, let longitude = CoreLocationController.shared.locationManager.location?.coordinate.longitude else {return}
             let userCoordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            let mySpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+            let mySpan = MKCoordinateSpan(latitudeDelta: 0.07, longitudeDelta: 0.07)
             let myRegion = MKCoordinateRegion(center: userCoordinates, span: mySpan)
             self.mapView.setRegion(myRegion, animated: true)
         }
@@ -67,19 +69,20 @@ class CreateBarCrawlViewController: UIViewController {
     
     
     func createAnnotations(barsInCrawl: [Bar]) {
+        mapView.removeAnnotations(mapView.annotations)
         guard let barsInBarCrawl = barCrawl?.bars else {return}
         for bars in barsInBarCrawl {
             let annotations = MKPointAnnotation()
             annotations.title = bars.name
             annotations.coordinate = CLLocationCoordinate2D(latitude: bars.latitude, longitude: bars.longitude)
-            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
             let viewRegion = MKCoordinateRegion(center: annotations.coordinate, span: span)
             mapView.setRegion(viewRegion, animated: true)
             mapView.addAnnotation(annotations)
         }
     }
     
-    //adding the subviews
+    //Adding the subviews
     func addAllSubviews() {
         self.view.addSubview(barDetailView)
         self.view.addSubview(labelStackView)
@@ -93,7 +96,7 @@ class CreateBarCrawlViewController: UIViewController {
         
     }
     
-    //setup the stackviews
+    //Setup the stackviews
     func setUpStackViews() {
         labelStackView.translatesAutoresizingMaskIntoConstraints = false
         labelStackView.addArrangedSubview(barImage)
@@ -108,7 +111,6 @@ class CreateBarCrawlViewController: UIViewController {
     func barDetailPopUp() {
         barDetailView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         labelStackView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        
         UIView.animate(withDuration: 0.2) {
             self.visualEffectView.alpha = 1
             self.barDetailView.alpha = 1
@@ -212,6 +214,8 @@ class CreateBarCrawlViewController: UIViewController {
         return button
     }()
     
+    
+    
     //Button actions - detail view
     @objc func closeButtonTapped(sender: UIButton) {
         selectButton(sender)
@@ -283,6 +287,66 @@ extension CreateBarCrawlViewController: UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            if editingStyle == .delete {
+                guard let bar = barCrawl?.bars[indexPath.row], let barCrawl = barCrawl else {return}
+                self.barCrawl?.bars.remove(at: indexPath.row)
+                BarCrawlController.shared.deleteBar(bar: bar, from: barCrawl) { (success) in
+                    if success {
+                        DispatchQueue.main.async {
+                            tableView.deleteRows(at: [indexPath], with: .fade)
+                            self.createAnnotations(barsInCrawl: barCrawl.bars)
+                            self.listOfBarsTableView.reloadData()
+                        }
+                    } else {
+                        print("Failed to delete bar from bar crawl")
+                    }
+                }
+            }
+        default:
+            break
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        switch indexPath.section {
+        case 0:
+            return .delete
+        default:
+            return .none
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.section == 0
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.section == 0
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        guard var bars = barCrawl?.bars else {return}
+        if destinationIndexPath.section != sourceIndexPath.section {
+            return
+        } else {
+            let movedObject = bars[sourceIndexPath.row]
+            bars.remove(at: sourceIndexPath.row)
+            bars.insert(movedObject, at: destinationIndexPath.row)
+            barCrawl?.bars = bars
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        return sourceIndexPath.section == proposedDestinationIndexPath.section ? proposedDestinationIndexPath : sourceIndexPath
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -332,6 +396,20 @@ extension CreateBarCrawlViewController: UITableViewDelegate, UITableViewDataSour
         viewController.barCrawlLandingPad = barCrawl
         self.present(viewController, animated: true)
     }
+    
+    func findBarsFromCurrentLocation(searchTerm: String) {
+        guard let location = CoreLocationController.shared.locationManager.location?.coordinate else {return}
+        let lat = location.latitude
+        let long = location.longitude
+        BarController.shared.fetchBarFrom(Search: searchTerm, lat: lat, long: long) { (BarItemsFromCompletion) in
+            if let unwrappedBarItems = BarItemsFromCompletion {
+                self.barItems = unwrappedBarItems
+                DispatchQueue.main.async {
+                    self.listOfBarsTableView.reloadData()
+                }
+            }
+        }
+    }
 }
 
 extension CreateBarCrawlViewController: CLLocationManagerDelegate {
@@ -345,19 +423,8 @@ extension CreateBarCrawlViewController: CLLocationManagerDelegate {
 extension CreateBarCrawlViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        guard let searchTerm = searchBar.text,
-            searchTerm != "",
-            let location = CoreLocationController.shared.locationManager.location?.coordinate else {return}
-        let lat = location.latitude
-        let long = location.longitude
-        BarController.shared.fetchBarFrom(Search: searchTerm, lat: lat, long: long) { (BarItemsFromCompletion) in
-            if let unwrappedBarItems = BarItemsFromCompletion {
-                self.barItems = unwrappedBarItems
-                DispatchQueue.main.async {
-                    self.listOfBarsTableView.reloadData()
-                }
-            }
-        }
+        guard let searchTerm = searchBar.text, searchTerm != "" else {return}
+        findBarsFromCurrentLocation(searchTerm: searchTerm)
     }
 }
 

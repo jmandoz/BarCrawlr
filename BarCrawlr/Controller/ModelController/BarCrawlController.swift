@@ -90,4 +90,19 @@ class BarCrawlController {
             completion(bars)
         }
     }
+    
+    //Delete
+    func deleteBarCrawl(barCrawl: BarCrawl, completion: @escaping (Bool) -> Void) {
+        guard let index = barCrawls.firstIndex(of: barCrawl) else {return}
+        barCrawls.remove(at: index)
+        CloudKitController.shared.delete(recordID: barCrawl.recordID, database: CloudKitController.shared.publicDB) { (success) in
+            completion(success ? true : false)
+        }
+    }
+    
+    func deleteBar(bar: Bar, from barCrawl: BarCrawl, completion: @escaping (Bool) -> Void) {
+        CloudKitController.shared.delete(recordID: bar.recordID, database: CloudKitController.shared.publicDB) { (success) in
+            completion(success ? true : false)
+        }
+    }
 }

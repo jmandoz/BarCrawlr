@@ -161,18 +161,18 @@
                                 <rect key="frame" x="0.0" y="486" width="414" height="327"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="selectedBarsCell" rowHeight="41" id="Fe1-u5-VCU" customClass="SelectedBarsListTableViewCell" customModule="BarCrawlr" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="41"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="selectedBarsCell" rowHeight="72" id="Fe1-u5-VCU" customClass="SelectedBarsListTableViewCell" customModule="BarCrawlr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fe1-u5-VCU" id="qbA-Vc-hmI">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="40.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wwv-gh-qMb">
-                                                    <rect key="frame" x="20" y="11" width="374" height="19"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="50"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍺" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjH-sc-QY3">
-                                                            <rect key="frame" x="0.0" y="0.0" width="24" height="19"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="24" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="24" id="eSj-wh-Vhr"/>
                                                             </constraints>
@@ -181,23 +181,24 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Da1-oj-3rb">
-                                                            <rect key="frame" x="32" y="0.0" width="174" height="19"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="32" y="0.0" width="174" height="50"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Physical Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OS-WM-I8D">
-                                                            <rect key="frame" x="214" y="0.0" width="160" height="19"/>
+                                                            <rect key="frame" x="214" y="0.0" width="160" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="160" id="err-Cs-hgu"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="2OS-WM-I8D" secondAttribute="trailing" id="Bgh-zE-kuO"/>
+                                                        <constraint firstAttribute="height" constant="50" id="CKi-Nd-eTO"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -205,9 +206,7 @@
                                                 <constraint firstItem="Wwv-gh-qMb" firstAttribute="leading" secondItem="qbA-Vc-hmI" secondAttribute="leadingMargin" id="CrK-81-ax9"/>
                                                 <constraint firstItem="Wwv-gh-qMb" firstAttribute="top" secondItem="qbA-Vc-hmI" secondAttribute="topMargin" id="MuO-SB-ASZ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Wwv-gh-qMb" secondAttribute="trailing" id="OBg-Ws-kyD"/>
-                                                <constraint firstItem="Wwv-gh-qMb" firstAttribute="leading" secondItem="qbA-Vc-hmI" secondAttribute="leadingMargin" id="jfa-Jq-1dE"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Wwv-gh-qMb" secondAttribute="bottom" id="phw-CG-4g5"/>
-                                                <constraint firstItem="Wwv-gh-qMb" firstAttribute="top" secondItem="qbA-Vc-hmI" secondAttribute="topMargin" id="xDK-1x-HZX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -218,7 +217,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BarSearchCell" rowHeight="151" id="UbL-rx-EBY" customClass="BarSearchResultsTableViewCell" customModule="BarCrawlr" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="69" width="414" height="151"/>
+                                        <rect key="frame" x="0.0" y="100" width="414" height="151"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UbL-rx-EBY" id="9nM-0f-E73">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150.5"/>
