@@ -10,21 +10,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home Page View Controller-->
         <scene sceneID="jvI-FW-pgm">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="B3d-So-6de" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="B3d-So-6de" customClass="HomePageViewController" customModule="BarCrawlr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ryt-Em-5S7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03A-ih-agw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03A-ih-agw" customClass="BarCrawlButton" customModule="BarCrawlr" customModuleProvider="target">
                                 <rect key="frame" x="122" y="654" width="170" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="Cfe-zt-zMK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="My Crawls">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -32,13 +31,12 @@
                                     <segue destination="TQu-sN-6VU" kind="show" id="OGx-kn-0Xl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLo-KS-mqE">
-                                <rect key="frame" x="122" y="562" width="170" height="41"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLo-KS-mqE" customClass="BarCrawlButton" customModule="BarCrawlr" customModuleProvider="target">
+                                <rect key="frame" x="92" y="562" width="230" height="41"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="c1J-ro-wJ8"/>
+                                    <constraint firstAttribute="width" constant="230" id="c1J-ro-wJ8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Create a Crawl">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -65,6 +63,11 @@
                         <viewLayoutGuide key="safeArea" id="W5i-FN-aKC"/>
                     </view>
                     <navigationItem key="navigationItem" id="jql-TS-ZGM"/>
+                    <connections>
+                        <outlet property="createBarCrawlButton" destination="gLo-KS-mqE" id="HLk-Kb-JzA"/>
+                        <outlet property="myCrawlsButton" destination="03A-ih-agw" id="kIh-Db-UVN"/>
+                        <outlet property="welcomeLabel" destination="0PD-6A-RFG" id="V6w-nk-gTK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wya-5R-GUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,18 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXZ-1m-bVv">
-                                <rect key="frame" x="82.5" y="561.5" width="249" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="cdf-3u-8tA"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="249" id="lKT-rb-uOs"/>
-                                </constraints>
-                                <state key="normal" title="Log In"/>
-                                <connections>
-                                    <action selector="logInButtonTapped:" destination="O94-U6-XMX" eventType="touchUpInside" id="MBC-sl-fMK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvk-N4-JFG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvk-N4-JFG" customClass="BarCrawlButton" customModule="BarCrawlr" customModuleProvider="target">
                                 <rect key="frame" x="82.5" y="651" width="249" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="249" id="Fy9-lL-WTt"/>
@@ -45,14 +34,12 @@
                         <constraints>
                             <constraint firstItem="Rvk-N4-JFG" firstAttribute="centerX" secondItem="lu0-LL-IXz" secondAttribute="centerX" id="Srb-sf-B1i"/>
                             <constraint firstItem="Rvk-N4-JFG" firstAttribute="centerY" secondItem="lu0-LL-IXz" secondAttribute="centerY" multiplier="1.5" id="bmd-Vc-pwM"/>
-                            <constraint firstItem="GXZ-1m-bVv" firstAttribute="centerX" secondItem="lu0-LL-IXz" secondAttribute="centerX" id="mvX-pl-nXG"/>
-                            <constraint firstItem="GXZ-1m-bVv" firstAttribute="centerY" secondItem="lu0-LL-IXz" secondAttribute="centerY" multiplier="1.3" id="rIU-yb-RZR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="155-bb-lgo"/>
                     </view>
                     <navigationItem key="navigationItem" id="RZH-df-xeB"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="LogInButton" destination="GXZ-1m-bVv" id="ich-TL-ho8"/>
                         <outlet property="signUpButton" destination="Rvk-N4-JFG" id="PNi-Y9-rgB"/>
                     </connections>
                 </viewController>
@@ -71,7 +58,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="771-VN-Km4" userLabel="Text Fieldss">
                                 <rect key="frame" x="67" y="348.5" width="280" height="199"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Username..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pU7-nP-0Ne">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Username..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pU7-nP-0Ne" customClass="BarCrawlTextField" customModule="BarCrawlr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="1Xp-CL-j0Z"/>
@@ -80,7 +67,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwk-oA-5uX">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fwk-oA-5uX" customClass="BarCrawlTextField" customModule="BarCrawlr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55" width="280" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="pgd-Bf-POj"/>
@@ -89,7 +76,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TW8-yb-hMT">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TW8-yb-hMT" customClass="BarCrawlTextField" customModule="BarCrawlr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="110" width="280" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="TG9-he-tlB"/>
@@ -98,7 +85,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cQU-9Z-oaP">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cQU-9Z-oaP" customClass="BarCrawlTextField" customModule="BarCrawlr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="165" width="280" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="ALr-MA-4wo"/>
@@ -112,13 +99,13 @@
                                     <constraint firstAttribute="width" constant="280" id="52y-bE-6of"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6u8-t4-5ZE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6u8-t4-5ZE" customClass="BarCrawlButton" customModule="BarCrawlr" customModuleProvider="target">
                                 <rect key="frame" x="107" y="651" width="200" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="FoN-ue-XCq"/>
                                     <constraint firstAttribute="height" constant="42" id="uyN-LZ-0yn"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Confirm"/>
                                 <connections>
                                     <action selector="createAccountButtonTapped:" destination="mQ5-fA-ASa" eventType="touchUpInside" id="Nux-m0-Cdz"/>
                                 </connections>
@@ -135,6 +122,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pom-Hm-dk1"/>
                     <connections>
+                        <outlet property="confirmButton" destination="6u8-t4-5ZE" id="4Ae-ac-IXX"/>
                         <outlet property="confirmPasswordTextField" destination="cQU-9Z-oaP" id="q0m-Rm-xFY"/>
                         <outlet property="emailTextField" destination="fwk-oA-5uX" id="fsU-jP-Fpc"/>
                         <outlet property="passwordTextField" destination="TW8-yb-hMT" id="BfF-l1-43X"/>
@@ -143,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r1O-cs-CFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="3"/>
+            <point key="canvasLocation" x="2209" y="3"/>
         </scene>
     </scenes>
 </document>

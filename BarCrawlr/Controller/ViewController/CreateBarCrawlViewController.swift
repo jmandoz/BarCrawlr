@@ -15,6 +15,8 @@ class CreateBarCrawlViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var listOfBarsTableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var confirmButton: UIButton!
     
     //CLLocation Manager
     let locationManager = CoreLocationController.shared.locationManager
@@ -29,6 +31,7 @@ class CreateBarCrawlViewController: UIViewController {
     //ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpUI()
         activateButton()
         hideDetailView()
         listOfBarsTableView.isEditing = true
@@ -138,7 +141,7 @@ class CreateBarCrawlViewController: UIViewController {
     let barDetailView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 10
-        view.backgroundColor = .white
+        view.backgroundColor = .mainBackground
         return view
     }()
     
@@ -174,6 +177,8 @@ class CreateBarCrawlViewController: UIViewController {
         let label = UILabel()
         label.text = "Name"
         label.textAlignment = .left
+        label.textColor = .lightBlue
+        label.font = label.font.withSize(24)
         return label
     }()
     
@@ -181,6 +186,7 @@ class CreateBarCrawlViewController: UIViewController {
         let label = UILabel()
         label.text = "Address"
         label.textAlignment = .left
+        label.textColor = .offWhite
         return label
     }()
     
@@ -188,6 +194,7 @@ class CreateBarCrawlViewController: UIViewController {
         let label = UILabel()
         label.text = "City and State"
         label.textAlignment = .left
+        label.textColor = .offWhite
         return label
     }()
     
@@ -195,6 +202,7 @@ class CreateBarCrawlViewController: UIViewController {
         let label = UILabel()
         label.text = "Zip"
         label.textAlignment = .left
+        label.textColor = .offWhite
         return label
     }()
     
@@ -202,6 +210,7 @@ class CreateBarCrawlViewController: UIViewController {
         let label = UILabel()
         label.text = "Rating"
         label.textAlignment = .left
+        label.textColor = .offWhite
         return label
     }()
     
@@ -210,7 +219,10 @@ class CreateBarCrawlViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Close", for: .normal)
         button.contentHorizontalAlignment = .center
-        button.setTitleColor(.blue, for: .normal)
+        button.backgroundColor = .lightBlue
+        button.cornerRadius(8)
+        button.setTitleColor(.mainBackground, for: .normal)
+        button.tintColor = .mainBackground
         return button
     }()
     
@@ -233,7 +245,7 @@ class CreateBarCrawlViewController: UIViewController {
     
     func selectButton(_ button: UIButton) {
         closeButton.setTitleColor(UIColor.lightGray, for: .normal)
-        button.setTitleColor(.blue, for: .normal)
+        button.setTitleColor(.mainBackground, for: .normal)
     }
     
     //Hide Detail View
@@ -269,15 +281,24 @@ extension CreateBarCrawlViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch section {
         case 0:
+            guard let bars = barCrawl?.bars else {return UIView()}
             let titleLabel = UILabel()
-            titleLabel.text = "Bars Selected ▾"
-            titleLabel.backgroundColor = UIColor(named: "headerBackground")
-            titleLabel.textColor = .white
+            if bars.count == 0 {
+                titleLabel.alpha = 0
+            } else {
+                UIView.animate(withDuration: 0.5) {
+                    titleLabel.alpha = 1
+                    titleLabel.text = " Bars Selected ▾"
+                    titleLabel.backgroundColor = .opaqueLight
+                    titleLabel.textColor = .mainBackground
+                }
+            }
             return titleLabel
         case 1:
             let titleLabel = UILabel()
-            titleLabel.text = "Search Results"
-            titleLabel.backgroundColor = .white
+            titleLabel.text = " Search Results"
+            titleLabel.backgroundColor = .opaqueBackground
+            titleLabel.textColor = .offWhite
             return titleLabel
         default:
             let titleLabel = UILabel()
@@ -478,3 +499,14 @@ extension CreateBarCrawlViewController {
     }
 }
 
+extension CreateBarCrawlViewController {
+    func setUpUI() {
+        backButton.backgroundColor = .lightBlue
+        backButton.cornerRadius(8)
+        backButton.setTitleColor(.mainBackground, for: .normal)
+        confirmButton.backgroundColor = .lightBlue
+        confirmButton.cornerRadius(8)
+        confirmButton.setTitleColor(.mainBackground, for: .normal)
+        listOfBarsTableView.backgroundColor = .mainBackground
+    }
+}

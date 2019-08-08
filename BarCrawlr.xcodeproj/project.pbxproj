@@ -21,7 +21,6 @@
 		A42264B322F6209500E4739B /* MyCrawlsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42264B222F6209500E4739B /* MyCrawlsTableViewCell.swift */; };
 		A42264B722F620F000E4739B /* MyCrawlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42264B622F620F000E4739B /* MyCrawlsViewController.swift */; };
 		A477C8CB22E91520001CD1E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8CA22E91520001CD1E9 /* AppDelegate.swift */; };
-		A477C8D022E91520001CD1E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A477C8CE22E91520001CD1E9 /* Main.storyboard */; };
 		A477C8D222E91522001CD1E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A477C8D122E91522001CD1E9 /* Assets.xcassets */; };
 		A477C8D522E91522001CD1E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A477C8D322E91522001CD1E9 /* LaunchScreen.storyboard */; };
 		A477C8E422E91645001CD1E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C8E322E91645001CD1E9 /* User.swift */; };
@@ -40,6 +39,9 @@
 		A477C90A22EE0668001CD1E9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A477C90922EE0668001CD1E9 /* Home.storyboard */; };
 		A477C90C22EE07E5001CD1E9 /* CreateBarCrawlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C90B22EE07E5001CD1E9 /* CreateBarCrawlViewController.swift */; };
 		A477C91022EE986C001CD1E9 /* BarSearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C90F22EE986C001CD1E9 /* BarSearchResultsTableViewCell.swift */; };
+		A4CF040622FB35250073898A /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CF040522FB35250073898A /* StyleGuide.swift */; };
+		A4CF040A22FB3A400073898A /* BarCrawlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CF040922FB3A400073898A /* BarCrawlButton.swift */; };
+		A4CF040C22FB412C0073898A /* BarCrawlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CF040B22FB412C0073898A /* BarCrawlTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +60,6 @@
 		A42264B622F620F000E4739B /* MyCrawlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCrawlsViewController.swift; sourceTree = "<group>"; };
 		A477C8C722E91520001CD1E9 /* BarCrawlr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarCrawlr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A477C8CA22E91520001CD1E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A477C8CF22E91520001CD1E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A477C8D122E91522001CD1E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A477C8D422E91522001CD1E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A477C8D622E91522001CD1E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +80,9 @@
 		A477C90922EE0668001CD1E9 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A477C90B22EE07E5001CD1E9 /* CreateBarCrawlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBarCrawlViewController.swift; sourceTree = "<group>"; };
 		A477C90F22EE986C001CD1E9 /* BarSearchResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarSearchResultsTableViewCell.swift; sourceTree = "<group>"; };
+		A4CF040522FB35250073898A /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
+		A4CF040922FB3A400073898A /* BarCrawlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCrawlButton.swift; sourceTree = "<group>"; };
+		A4CF040B22FB412C0073898A /* BarCrawlTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCrawlTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,8 @@
 		A477C8DE22E91597001CD1E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A4CF040822FB3A230073898A /* CustomViews */,
+				A4CF040422FB34FB0073898A /* CustomUI */,
 				A477C8E022E915AD001CD1E9 /* Storyboards */,
 				A477C8FB22ED2B45001CD1E9 /* SelectedBarsListTableViewCell.swift */,
 				A477C90F22EE986C001CD1E9 /* BarSearchResultsTableViewCell.swift */,
@@ -170,7 +176,6 @@
 		A477C8E022E915AD001CD1E9 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				A477C8CE22E91520001CD1E9 /* Main.storyboard */,
 				A477C90722EE03E5001CD1E9 /* UserSignUp.storyboard */,
 				A477C90922EE0668001CD1E9 /* Home.storyboard */,
 				A42264A022F29BC800E4739B /* CreateBarCrawl.storyboard */,
@@ -221,6 +226,23 @@
 				A422649B22F21FA300E4739B /* BarCrawlController.swift */,
 			);
 			path = ModelController;
+			sourceTree = "<group>";
+		};
+		A4CF040422FB34FB0073898A /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				A4CF040522FB35250073898A /* StyleGuide.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		A4CF040822FB3A230073898A /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				A4CF040922FB3A400073898A /* BarCrawlButton.swift */,
+				A4CF040B22FB412C0073898A /* BarCrawlTextField.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +318,6 @@
 				A477C8F022EAB211001CD1E9 /* Default-568h@2x.png in Resources */,
 				A477C90A22EE0668001CD1E9 /* Home.storyboard in Resources */,
 				A477C8D222E91522001CD1E9 /* Assets.xcassets in Resources */,
-				A477C8D022E91520001CD1E9 /* Main.storyboard in Resources */,
 				A42264A722F4E44000E4739B /* BarCrawlView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +331,7 @@
 			files = (
 				A42264B722F620F000E4739B /* MyCrawlsViewController.swift in Sources */,
 				A477C8F622EBD24C001CD1E9 /* UserController.swift in Sources */,
+				A4CF040622FB35250073898A /* StyleGuide.swift in Sources */,
 				A42264AF22F600E300E4739B /* DateExtension.swift in Sources */,
 				A477C8EE22EAB0AF001CD1E9 /* UserLogInViewController.swift in Sources */,
 				A422649C22F21FA300E4739B /* BarCrawlController.swift in Sources */,
@@ -318,6 +340,7 @@
 				A477C8F222EAB33B001CD1E9 /* SignUpViewController.swift in Sources */,
 				A42264B322F6209500E4739B /* MyCrawlsTableViewCell.swift in Sources */,
 				A477C8F422EBCD92001CD1E9 /* CloudKitController.swift in Sources */,
+				A4CF040C22FB412C0073898A /* BarCrawlTextField.swift in Sources */,
 				A422649A22F1FD9400E4739B /* Bar.swift in Sources */,
 				A477C90222ED37B8001CD1E9 /* BarController.swift in Sources */,
 				A422649622F1005B00E4739B /* BarCrawl.swift in Sources */,
@@ -327,6 +350,7 @@
 				A477C8CB22E91520001CD1E9 /* AppDelegate.swift in Sources */,
 				A42264AB22F5DE7E00E4739B /* BarCrawlViewTableViewCell.swift in Sources */,
 				A422649F22F2543C00E4739B /* NameBarCrawlViewController.swift in Sources */,
+				A4CF040A22FB3A400073898A /* BarCrawlButton.swift in Sources */,
 				A477C8FC22ED2B45001CD1E9 /* SelectedBarsListTableViewCell.swift in Sources */,
 				A477C90422ED481C001CD1E9 /* CoreLocationController.swift in Sources */,
 				A477C91022EE986C001CD1E9 /* BarSearchResultsTableViewCell.swift in Sources */,
@@ -337,14 +361,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A477C8CE22E91520001CD1E9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A477C8CF22E91520001CD1E9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A477C8D322E91522001CD1E9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

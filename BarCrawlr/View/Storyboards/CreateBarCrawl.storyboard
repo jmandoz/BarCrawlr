@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,10 +19,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRV-NL-hD1">
-                                <rect key="frame" x="167" y="748" width="80" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRV-NL-hD1" customClass="BarCrawlButton" customModule="BarCrawlr" customModuleProvider="target">
+                                <rect key="frame" x="132" y="748" width="150" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="rmc-IB-mE4"/>
+                                    <constraint firstAttribute="width" constant="150" id="rmc-IB-mE4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Submit"/>
@@ -39,7 +40,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i7a-fw-isV">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i7a-fw-isV" customClass="BarCrawlTextField" customModule="BarCrawlr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28.5" width="320" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -74,8 +75,8 @@
                                     <constraint firstAttribute="trailing" secondItem="fF4-ux-mik" secondAttribute="trailing" id="cEZ-X1-vWB"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tha-po-Tlc">
-                                <rect key="frame" x="47" y="802" width="47" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tha-po-Tlc" customClass="BarCrawlButton" customModule="BarCrawlr" customModuleProvider="target">
+                                <rect key="frame" x="20" y="802" width="47" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="mFw-aq-2Ow"/>
                                     <constraint firstAttribute="height" constant="30" id="tex-AT-EqO"/>
@@ -121,16 +122,21 @@
                             <constraint firstItem="CNI-45-TcS" firstAttribute="bottom" secondItem="Tha-po-Tlc" secondAttribute="bottom" constant="30" id="gAn-hw-ZSO"/>
                             <constraint firstItem="oaC-YU-imA" firstAttribute="trailing" secondItem="M3i-qS-Qlh" secondAttribute="trailing" id="qsR-Gv-jh2"/>
                             <constraint firstItem="M3i-qS-Qlh" firstAttribute="centerX" secondItem="XOK-Q9-tGd" secondAttribute="centerX" id="rNT-uS-Xpm"/>
-                            <constraint firstItem="Tha-po-Tlc" firstAttribute="leading" secondItem="CNI-45-TcS" secondAttribute="leading" constant="47" id="rW3-UM-33E"/>
+                            <constraint firstItem="Tha-po-Tlc" firstAttribute="leading" secondItem="CNI-45-TcS" secondAttribute="leading" constant="20" id="rW3-UM-33E"/>
                             <constraint firstItem="oaC-YU-imA" firstAttribute="leading" secondItem="M3i-qS-Qlh" secondAttribute="leading" id="viY-8q-PW2"/>
                             <constraint firstItem="Bfs-Ty-UVd" firstAttribute="top" secondItem="M3i-qS-Qlh" secondAttribute="bottom" constant="28" id="yNu-Zf-oCb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CNI-45-TcS"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="Tha-po-Tlc" id="25x-5m-DGD"/>
                         <outlet property="crawlDatePicker" destination="KXV-M7-9tk" id="T3k-mW-Scl"/>
                         <outlet property="crawlNameTextField" destination="i7a-fw-isV" id="Wor-Ix-IZ2"/>
+                        <outlet property="descriptionLabel" destination="0rw-Cg-M8h" id="p3B-pF-CH9"/>
                         <outlet property="descriptionTextView" destination="fF4-ux-mik" id="MX3-7Q-gx4"/>
+                        <outlet property="nameCrawlLabel" destination="Mg1-Fc-YGU" id="VCT-Ph-6uN"/>
+                        <outlet property="pickDateLabel" destination="vf5-ai-v9A" id="lbl-Q7-X0O"/>
+                        <outlet property="submitButton" destination="tRV-NL-hD1" id="JvN-ED-E4O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EsZ-29-wP0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -168,31 +174,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wwv-gh-qMb">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wwv-gh-qMb">
                                                     <rect key="frame" x="20" y="11" width="374" height="50"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍺" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjH-sc-QY3">
-                                                            <rect key="frame" x="0.0" y="0.0" width="24" height="50"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="24" id="eSj-wh-Vhr"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Da1-oj-3rb">
-                                                            <rect key="frame" x="32" y="0.0" width="174" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="183" height="50"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" name="backgroundColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Physical Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OS-WM-I8D">
-                                                            <rect key="frame" x="214" y="0.0" width="160" height="50"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="160" id="err-Cs-hgu"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="191" y="0.0" width="183" height="50"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" name="backgroundColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -209,10 +203,9 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="Wwv-gh-qMb" secondAttribute="bottom" id="phw-CG-4g5"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="lightBlue"/>
                                         <connections>
                                             <outlet property="addressLabel" destination="2OS-WM-I8D" id="7eI-tb-9ge"/>
-                                            <outlet property="barCounter" destination="hjH-sc-QY3" id="djG-pR-edC"/>
                                             <outlet property="nameLabel" destination="Da1-oj-3rb" id="xUB-mI-QrH"/>
                                         </connections>
                                     </tableViewCell>
@@ -239,13 +232,13 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="(NameLabel)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ap6-AD-jgP">
                                                                     <rect key="frame" x="0.0" y="0.0" width="254" height="21.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                    <nil key="textColor"/>
+                                                                    <color key="textColor" name="offWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="(phoneNumber)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3h-j5-zX2">
                                                                     <rect key="frame" x="0.0" y="29.5" width="254" height="16"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                    <nil key="textColor"/>
+                                                                    <color key="textColor" name="offWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rAb-EY-CI9">
@@ -254,35 +247,35 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Address)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FW-sw-P8Y">
                                                                             <rect key="frame" x="0.0" y="0.0" width="254" height="13.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                                            <nil key="textColor"/>
+                                                                            <color key="textColor" name="offWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(City and State)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZl-7r-7R3">
                                                                             <rect key="frame" x="0.0" y="13.5" width="254" height="13.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                                            <nil key="textColor"/>
+                                                                            <color key="textColor" name="offWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="(Zip)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuI-td-9vP">
                                                                             <rect key="frame" x="0.0" y="27" width="254" height="12"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                                            <nil key="textColor"/>
+                                                                            <color key="textColor" name="offWhite"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="m1i-J2-aM5">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="m1i-J2-aM5">
                                                                     <rect key="frame" x="0.0" y="100.5" width="254" height="30"/>
                                                                     <subviews>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PW6-dC-0lj">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="127" height="30"/>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PW6-dC-0lj" customClass="BarCrawlButton" customModule="BarCrawlr" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="124.5" height="30"/>
                                                                             <state key="normal" title="Details"/>
                                                                             <connections>
                                                                                 <action selector="detailsButtonTapped:" destination="UbL-rx-EBY" eventType="touchUpInside" id="cqr-ym-gHS"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNf-dc-JhR">
-                                                                            <rect key="frame" x="127" y="0.0" width="127" height="30"/>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNf-dc-JhR" customClass="BarCrawlButton" customModule="BarCrawlr" customModuleProvider="target">
+                                                                            <rect key="frame" x="129.5" y="0.0" width="124.5" height="30"/>
                                                                             <state key="normal" title="Add"/>
                                                                             <connections>
                                                                                 <action selector="addButtonTapped:" destination="UbL-rx-EBY" eventType="touchUpInside" id="R6T-cx-WNT"/>
@@ -302,6 +295,7 @@
                                                 <constraint firstItem="Jz6-j1-pqR" firstAttribute="leading" secondItem="9nM-0f-E73" secondAttribute="leading" constant="10" id="p09-0E-YAc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="backgroundColor"/>
                                         <connections>
                                             <outlet property="addressLabel" destination="3FW-sw-P8Y" id="91o-T0-oZH"/>
                                             <outlet property="barImageView" destination="enY-zX-lT2" id="RWv-60-7gK"/>
@@ -313,50 +307,53 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="210" translatesAutoresizingMaskIntoConstraints="NO" id="Efd-R7-bhO">
-                                <rect key="frame" x="20" y="62.5" width="374" height="32"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFv-TY-fw7">
-                                        <rect key="frame" x="0.0" y="0.0" width="82" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Back"/>
-                                        <connections>
-                                            <segue destination="nTp-OU-nxo" kind="show" id="nSp-ic-9A9"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpZ-Ng-tZF">
-                                        <rect key="frame" x="292" y="0.0" width="82" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Confirm"/>
-                                        <connections>
-                                            <action selector="confirmButtonTapped:" destination="wpj-uu-O83" eventType="touchUpInside" id="jfz-eU-SgY"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <searchBar contentMode="redraw" placeholder="Search for Bars " translatesAutoresizingMaskIntoConstraints="NO" id="87q-tP-SV7">
+                            <searchBar contentMode="redraw" barStyle="black" placeholder="Search Bars by name" translatesAutoresizingMaskIntoConstraints="NO" id="87q-tP-SV7">
                                 <rect key="frame" x="0.0" y="430" width="414" height="56"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" name="backgroundColor"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="wpj-uu-O83" id="AQ7-x7-9pJ"/>
                                 </connections>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpZ-Ng-tZF" customClass="BarCrawlButton" customModule="BarCrawlr" customModuleProvider="target">
+                                <rect key="frame" x="294" y="64" width="100" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="oiO-Iu-YXA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmButtonTapped:" destination="wpj-uu-O83" eventType="touchUpInside" id="jfz-eU-SgY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFv-TY-fw7" customClass="BarCrawlButton" customModule="BarCrawlr" customModuleProvider="target">
+                                <rect key="frame" x="20" y="64" width="84" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="dG3-w1-gCk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="nTp-OU-nxo" kind="show" id="nSp-ic-9A9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xF8-jF-lOJ" firstAttribute="trailing" secondItem="zK6-Xl-6RH" secondAttribute="trailing" id="5q3-eG-NXv"/>
+                            <constraint firstItem="NFv-TY-fw7" firstAttribute="leading" secondItem="xF8-jF-lOJ" secondAttribute="leading" constant="20" id="6uY-za-GTi"/>
                             <constraint firstItem="zK6-Xl-6RH" firstAttribute="centerY" secondItem="sC8-Ku-ham" secondAttribute="centerY" multiplier="1.45" id="8Bb-bb-RP0"/>
                             <constraint firstItem="xF8-jF-lOJ" firstAttribute="bottom" secondItem="zK6-Xl-6RH" secondAttribute="bottom" id="8fJ-yd-4kC"/>
-                            <constraint firstItem="xF8-jF-lOJ" firstAttribute="trailing" secondItem="Efd-R7-bhO" secondAttribute="trailing" constant="20" id="BeQ-gY-mJ6"/>
-                            <constraint firstItem="Efd-R7-bhO" firstAttribute="centerX" secondItem="sC8-Ku-ham" secondAttribute="centerX" id="ERq-hc-nje"/>
                             <constraint firstItem="87q-tP-SV7" firstAttribute="leading" secondItem="xF8-jF-lOJ" secondAttribute="leading" id="Htn-q3-oYI"/>
                             <constraint firstItem="87q-tP-SV7" firstAttribute="top" secondItem="f9W-eF-UqN" secondAttribute="bottom" id="L0Z-Rw-0sF"/>
                             <constraint firstItem="zK6-Xl-6RH" firstAttribute="top" secondItem="87q-tP-SV7" secondAttribute="bottom" id="Lka-52-tJe"/>
                             <constraint firstItem="f9W-eF-UqN" firstAttribute="top" secondItem="sC8-Ku-ham" secondAttribute="top" id="Pa7-nD-hwv"/>
+                            <constraint firstItem="NFv-TY-fw7" firstAttribute="top" secondItem="xF8-jF-lOJ" secondAttribute="top" constant="20" id="SEQ-Ed-hy5"/>
                             <constraint firstItem="f9W-eF-UqN" firstAttribute="trailing" secondItem="xF8-jF-lOJ" secondAttribute="trailing" id="Suh-sO-9LZ"/>
-                            <constraint firstItem="Efd-R7-bhO" firstAttribute="leading" secondItem="xF8-jF-lOJ" secondAttribute="leading" constant="20" id="WF4-jT-XQ8"/>
                             <constraint firstItem="f9W-eF-UqN" firstAttribute="leading" secondItem="xF8-jF-lOJ" secondAttribute="leading" id="ZTD-nL-sKC"/>
-                            <constraint firstItem="Efd-R7-bhO" firstAttribute="centerY" secondItem="sC8-Ku-ham" secondAttribute="centerY" multiplier="0.175" id="keH-Gb-GyI"/>
+                            <constraint firstItem="xF8-jF-lOJ" firstAttribute="trailing" secondItem="GpZ-Ng-tZF" secondAttribute="trailing" constant="20" id="bXR-I3-UMc"/>
+                            <constraint firstItem="GpZ-Ng-tZF" firstAttribute="top" secondItem="xF8-jF-lOJ" secondAttribute="top" constant="20" id="h5U-Cp-A4E"/>
                             <constraint firstItem="zK6-Xl-6RH" firstAttribute="leading" secondItem="xF8-jF-lOJ" secondAttribute="leading" id="nnd-TP-VqO"/>
                             <constraint firstItem="87q-tP-SV7" firstAttribute="trailing" secondItem="xF8-jF-lOJ" secondAttribute="trailing" id="xcC-VX-rde"/>
                         </constraints>
@@ -365,6 +362,8 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="backButton" destination="NFv-TY-fw7" id="7m5-b7-S27"/>
+                        <outlet property="confirmButton" destination="GpZ-Ng-tZF" id="dO5-OF-KND"/>
                         <outlet property="listOfBarsTableView" destination="zK6-Xl-6RH" id="2ae-eI-ijs"/>
                         <outlet property="mapView" destination="f9W-eF-UqN" id="jSC-oR-CK3"/>
                         <outlet property="searchBar" destination="87q-tP-SV7" id="jT5-0i-VSU"/>
@@ -375,6 +374,17 @@
             <point key="canvasLocation" x="5892.753623188406" y="521.65178571428567"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="backgroundColor">
+            <color red="0.11372549019607843" green="0.13725490196078433" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightBlue">
+            <color red="0.60392156862745094" green="0.84705882352941175" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="offWhite">
+            <color red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nSp-ic-9A9"/>
     </inferredMetricsTieBreakers>

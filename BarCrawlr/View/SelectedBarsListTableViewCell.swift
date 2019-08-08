@@ -15,4 +15,10 @@ class SelectedBarsListTableViewCell: UITableViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     
     @IBOutlet weak var barCounter: UILabel!
+    
+    
+}
+
+extension SelectedBarsListTableViewCell {
+    
 }
