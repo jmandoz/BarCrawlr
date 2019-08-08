@@ -50,11 +50,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueBeerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="om6-N8-3WD">
+                                <rect key="frame" x="128" y="211" width="158" height="158"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="om6-N8-3WD" secondAttribute="height" multiplier="1:1" id="jgh-2O-SWQ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0PD-6A-RFG" firstAttribute="centerX" secondItem="Ryt-Em-5S7" secondAttribute="centerX" id="Gdp-1U-Y8u"/>
+                            <constraint firstItem="om6-N8-3WD" firstAttribute="top" secondItem="0PD-6A-RFG" secondAttribute="bottom" constant="66" id="Tws-EO-QTJ"/>
                             <constraint firstItem="gLo-KS-mqE" firstAttribute="centerX" secondItem="Ryt-Em-5S7" secondAttribute="centerX" id="dZH-m7-bEB"/>
+                            <constraint firstItem="om6-N8-3WD" firstAttribute="leading" secondItem="W5i-FN-aKC" secondAttribute="leading" constant="128" id="fgG-An-vbY"/>
+                            <constraint firstItem="W5i-FN-aKC" firstAttribute="trailing" secondItem="om6-N8-3WD" secondAttribute="trailing" constant="128" id="kec-RO-9K0"/>
                             <constraint firstItem="gLo-KS-mqE" firstAttribute="centerY" secondItem="Ryt-Em-5S7" secondAttribute="centerY" multiplier="1.3" id="pgL-Ux-8Oi"/>
                             <constraint firstItem="0PD-6A-RFG" firstAttribute="centerY" secondItem="Ryt-Em-5S7" secondAttribute="centerY" multiplier="0.3" id="vNZ-LM-EWu"/>
                             <constraint firstItem="03A-ih-agw" firstAttribute="centerX" secondItem="Ryt-Em-5S7" secondAttribute="centerX" id="vlQ-4m-uAv"/>
@@ -90,4 +99,7 @@
             <point key="canvasLocation" x="5574" y="761"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BlueBeerIcon" width="348" height="337"/>
+    </resources>
 </document>

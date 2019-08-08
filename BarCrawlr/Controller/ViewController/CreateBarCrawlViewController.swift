@@ -17,6 +17,7 @@ class CreateBarCrawlViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var warningLabel: UILabel!
     
     //CLLocation Manager
     let locationManager = CoreLocationController.shared.locationManager
@@ -38,6 +39,7 @@ class CreateBarCrawlViewController: UIViewController {
         locationManager.delegate = self
         listOfBarsTableView.delegate = self
         listOfBarsTableView.dataSource = self
+        mapView.delegate = self
         listOfBarsTableView.estimatedRowHeight = UITableView.automaticDimension
         CoreLocationController.shared.activateLocationServices()
         getMyRegion()
@@ -75,9 +77,7 @@ class CreateBarCrawlViewController: UIViewController {
         mapView.removeAnnotations(mapView.annotations)
         guard let barsInBarCrawl = barCrawl?.bars else {return}
         for bars in barsInBarCrawl {
-            let annotations = MKPointAnnotation()
-            annotations.title = bars.name
-            annotations.coordinate = CLLocationCoordinate2D(latitude: bars.latitude, longitude: bars.longitude)
+            let annotations = customPin(coordinate: CLLocationCoordinate2D(latitude: bars.latitude, longitude: bars.longitude), title: bars.name, subtitle: bars.address)
             let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
             let viewRegion = MKCoordinateRegion(center: annotations.coordinate, span: span)
             mapView.setRegion(viewRegion, animated: true)
@@ -412,10 +412,17 @@ extension CreateBarCrawlViewController: UITableViewDelegate, UITableViewDataSour
     
     //Segue function
     func presentBarCrawlVC(barCrawl: BarCrawl) {
+        if barCrawl.bars.count >= 2 {
         let storyboard = UIStoryboard(name: "BarCrawlView", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "BarCrawlVC") as? BarCrawlViewController else {return}
         viewController.barCrawlLandingPad = barCrawl
         self.present(viewController, animated: true)
+        } else {
+                self.warningLabel.alpha = 1
+            UIView.animate(withDuration: 7) {
+                self.warningLabel.alpha = 0
+            }
+        }
     }
     
     func findBarsFromCurrentLocation(searchTerm: String) {
@@ -487,6 +494,20 @@ extension CreateBarCrawlViewController: BarSearchResultsTableViewCellDelegate {
     }
 }
 
+extension CreateBarCrawlViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        let reuseIdentifier = "pin"
+        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        annotationView.canShowCallout = true
+        annotationView.image = #imageLiteral(resourceName: "BarCrawlrAnnotation")
+        
+        return annotationView
+    }
+}
+
 extension CreateBarCrawlViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateBarCrawlViewController.dismissKeyboard))
@@ -508,5 +529,6 @@ extension CreateBarCrawlViewController {
         confirmButton.cornerRadius(8)
         confirmButton.setTitleColor(.mainBackground, for: .normal)
         listOfBarsTableView.backgroundColor = .mainBackground
+        warningLabel.alpha = 0
     }
 }

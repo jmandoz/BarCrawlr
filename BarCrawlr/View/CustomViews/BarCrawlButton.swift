@@ -22,7 +22,6 @@ class BarCrawlButton: UIButton {
     }
     
     func addButtonShadow() {
-//        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = .init(width: 3, height: 3)
         self.layer.shadowOpacity = 0.4
