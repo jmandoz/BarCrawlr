@@ -14,8 +14,11 @@ class MyCrawlsViewController: UIViewController {
     
     @IBOutlet weak var myCrawlsTableView: UITableView!
     
+    @IBOutlet weak var homeButton: BarCrawlButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpUI()
         myCrawlsTableView.delegate = self
         myCrawlsTableView.dataSource = self
         guard let currentUser = UserController.shared.currentUser else {return}
@@ -52,7 +55,7 @@ extension MyCrawlsViewController: UITableViewDelegate, UITableViewDataSource {
             BarCrawlController.shared.deleteBarCrawl(barCrawl: barCrawl) { (success) in
                 if success {
                     DispatchQueue.main.async {
-                        tableView.deleteRows(at: [indexPath], with: .fade)
+                        tableView.deleteRows(at: [indexPath], with: .automatic)
                         self.myCrawlsTableView.reloadData()
                     }
                 }
@@ -67,5 +70,12 @@ extension MyCrawlsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.descriptionLabel.text = userCrawls.description
         cell.dateAndTimeLabel.text = "\(userCrawls.crawlDate.formatDate())"
         return cell
+    }
+}
+
+extension MyCrawlsViewController {
+    func setUpUI() {
+        self.view.backgroundColor = .mainBackground
+        myCrawlsTableView.backgroundColor = .mainBackground
     }
 }

@@ -10,13 +10,16 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var usernameTextField: BarCrawlTextField!
+    @IBOutlet weak var emailTextField: BarCrawlTextField!
+    @IBOutlet weak var passwordTextField: BarCrawlTextField!
+    @IBOutlet weak var confirmPasswordTextField: BarCrawlTextField!
+    @IBOutlet weak var confirmButton: BarCrawlButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpUI()
+        hideKeyboardWhenTappedAround()
     }
     
     @IBAction func createAccountButtonTapped(_ sender: Any) {
@@ -38,5 +41,23 @@ class SignUpViewController: UIViewController {
             let viewController = storyboard.instantiateViewController(withIdentifier: "HomeVC")
             self.present(viewController, animated: true)
         }
+    }
+}
+
+extension SignUpViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateBarCrawlViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+extension SignUpViewController {
+    func setUpUI() {
+        self.view.backgroundColor = UIColor.mainBackground
     }
 }

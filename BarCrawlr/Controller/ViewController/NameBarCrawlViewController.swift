@@ -10,14 +10,21 @@ import UIKit
 
 class NameBarCrawlViewController: UIViewController {
     
-    @IBOutlet weak var crawlNameTextField: UITextField!
+    @IBOutlet weak var crawlNameTextField: BarCrawlTextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var crawlDatePicker: UIDatePicker!
+    @IBOutlet weak var nameCrawlLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var pickDateLabel: UILabel!
+    @IBOutlet weak var submitButton: BarCrawlButton!
+    @IBOutlet weak var backButton: BarCrawlButton!
+    
     
     var barCrawlCreated: BarCrawl?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpUI()
         self.hideKeyboardWhenTappedAround()
     }
     
@@ -51,5 +58,19 @@ extension NameBarCrawlViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension NameBarCrawlViewController {
+    func setUpUI() {
+        self.view.backgroundColor = .mainBackground
+        crawlDatePicker.backgroundColor = .mainBackground
+        crawlDatePicker.setValue(UIColor.white, forKey: "textColor")
+        descriptionTextView.backgroundColor = .gray
+        descriptionTextView.textColor = .offWhite
+        descriptionTextView.cornerRadius(8)
+        nameCrawlLabel.textColor = .lightBlue
+        descriptionLabel.textColor = .lightBlue
+        pickDateLabel.textColor = .lightBlue
     }
 }

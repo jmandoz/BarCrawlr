@@ -12,11 +12,11 @@ import CloudKit
 
 class UserLogInViewController: UIViewController {
     
-    @IBOutlet weak var LogInButton: UIButton!
-    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var signUpButton: BarCrawlButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpUI()
         UserController.shared.fetchUser { (success) in
             if success {
                 DispatchQueue.main.async {
@@ -24,15 +24,30 @@ class UserLogInViewController: UIViewController {
                 }
             }
         }
-    }
-
-    @IBAction func logInButtonTapped(_ sender: Any) {
-        CloudKitController.shared.checkForiCloudUser()
+        hideKeyboardWhenTappedAround()
     }
 
     func presentHomeView() {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "HomeVC")
         self.present(viewController, animated: true)
+    }
+}
+
+extension UserLogInViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateBarCrawlViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+extension UserLogInViewController {
+    func setUpUI() {
+        self.view.backgroundColor = UIColor.mainBackground
     }
 }

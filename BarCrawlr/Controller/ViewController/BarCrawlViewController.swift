@@ -8,29 +8,33 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class BarCrawlViewController: UIViewController {
     
     //Outlets
+    @IBOutlet weak var LabelsStackView: UIStackView!
     @IBOutlet weak var barCrawlDateLabel: UILabel!
+    @IBOutlet weak var barCrawlDistanceLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var listOfBarsTableView: UITableView!
+    @IBOutlet weak var myCrawlsButton: BarCrawlButton!
     
     //Sources
     var barCrawlLandingPad: BarCrawl?
     var unwrappedBarsFromCrawl: [Bar] = []
+    var distance: Double = 0
     var sourceCoordinate = CLLocationCoordinate2D()
     var arriveCoordinate = CLLocationCoordinate2D()
     
     //View
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpUI()
         listOfBarsTableView.delegate = self
         listOfBarsTableView.dataSource = self
         mapView.delegate = self
         listOfBarsTableView.reloadData()
-        guard let date = barCrawlLandingPad?.crawlDate else {return}
-        barCrawlDateLabel.text = "Scheduled for: \(date.formatDate())"
         guard let unwrappedBarsInCrawl = barCrawlLandingPad?.bars else {return}
         guard let unwrappedCrawl = barCrawlLandingPad else {return}
         getDirections(locations: unwrappedBarsInCrawl)
@@ -71,6 +75,10 @@ class BarCrawlViewController: UIViewController {
             let secondBar = locations[bars + 1]
             let firstCoordinate = CLLocationCoordinate2DMake(firstBar.latitude, firstBar.longitude)
             let secondCoordinate = CLLocationCoordinate2DMake(secondBar.latitude, secondBar.longitude)
+            let loc1 = CLLocation(latitude: firstBar.latitude, longitude: firstBar.longitude)
+            let loc2 = CLLocation(latitude: secondBar.latitude, longitude: secondBar.longitude)
+            let distanceFromBar = loc1.distance(from: loc2)
+            distance += distanceFromBar
             sourceCoordinate = firstCoordinate
             arriveCoordinate = secondCoordinate
             let request = createDirectionRequest()
@@ -85,12 +93,14 @@ class BarCrawlViewController: UIViewController {
                 self.mapView.addOverlay(route.polyline, level: .aboveRoads)
                 self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
             }
+            
             guard let centerLatitude = locations.first?.latitude, let centerLongitude = locations.first?.longitude else {return}
             let centerCoordinate = CLLocationCoordinate2D(latitude: centerLatitude, longitude: centerLongitude)
             let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
             let region = MKCoordinateRegion(center: centerCoordinate, span: span)
             self.mapView.setRegion(region, animated: true)
         }
+        barCrawlDistanceLabel.text = "\((distance * 0.000621371).rounded())mi"
     }
     
     func createDirectionRequest() -> MKDirections.Request {
@@ -163,10 +173,9 @@ extension BarCrawlViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let titleLabel = UILabel()
             titleLabel.text = barCrawlLandingPad?.name
-            titleLabel.textColor = UIColor(named: "headerBackground")
-            titleLabel.font = UIFont(name: "Helvetica", size: 22.0)
+            titleLabel.textColor = .lightBlue
             titleLabel.textAlignment = .center
-            titleLabel.backgroundColor = .white
+            titleLabel.backgroundColor = .mainBackground
             return titleLabel
         default:
             let titleLabel = UILabel()
@@ -181,7 +190,18 @@ extension BarCrawlViewController: UITableViewDelegate, UITableViewDataSource {
 extension BarCrawlViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
-        renderer.strokeColor = UIColor(named: "headerBackground")
+        renderer.strokeColor = .mainBackground
+        renderer.fillColor = .lightBlue
         return renderer
+    }
+}
+
+extension BarCrawlViewController {
+    func setUpUI() {
+        guard let date = barCrawlLandingPad?.crawlDate else {return}
+        barCrawlDateLabel.text = "Scheduled for: \(date.formatDate())"
+        listOfBarsTableView.backgroundColor = .mainBackground
+        LabelsStackView.backgroundColor = .opaqueWhite
+        LabelsStackView.cornerRadius(8)
     }
 }

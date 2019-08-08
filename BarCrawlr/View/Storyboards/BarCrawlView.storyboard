@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,16 +22,39 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yv2-PC-sLv">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="616.5"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5c-iM-m7y">
-                                <rect key="frame" x="10" y="54" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nlq-g8-ryS">
+                                <rect key="frame" x="10" y="64" width="60.5" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Label  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5c-iM-m7y">
+                                        <rect key="frame" x="0.0" y="0.0" width="60.5" height="35"/>
+                                        <color key="backgroundColor" name="opaqueWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Umo-is-DKO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="lightBlue"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Label  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORp-I3-SBk">
+                                        <rect key="frame" x="0.0" y="35" width="60.5" height="35"/>
+                                        <color key="backgroundColor" name="opaqueWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="qdl-oH-ogp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="lightBlue"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nc8-nH-xzw">
                                 <rect key="frame" x="0.0" y="616.5" width="414" height="245.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" name="backgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="barsInCrawlCell" rowHeight="63" id="dcy-9l-Wbr" customClass="BarCrawlViewTableViewCell" customModule="BarCrawlr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="63"/>
@@ -48,7 +72,7 @@
                                                                 <constraint firstAttribute="height" constant="62.5" id="F6a-I5-bzU"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" name="backgroundColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8l-3A-u0s">
@@ -58,7 +82,7 @@
                                                                 <constraint firstAttribute="height" constant="62.5" id="oMf-Ft-C5w"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" name="backgroundColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -77,7 +101,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="ug2-Z9-4cb" secondAttribute="trailing" id="xTl-w7-SNj"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="lightBlue"/>
                                         <connections>
                                             <outlet property="barAddressLabel" destination="R8l-3A-u0s" id="7ET-iZ-Qd9"/>
                                             <outlet property="barNameLabel" destination="LUn-Y8-jan" id="E7h-zR-Jvc"/>
@@ -85,9 +109,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eR-pj-pfc">
-                                <rect key="frame" x="337" y="79" width="67" height="30"/>
-                                <state key="normal" title="MyCrawls"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eR-pj-pfc" customClass="BarCrawlButton" customModule="BarCrawlr" customModuleProvider="target">
+                                <rect key="frame" x="294" y="551.5" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="PaP-5c-Ak3"/>
+                                </constraints>
+                                <state key="normal" title="MyCrawls">
+                                    <color key="titleShadowColor" name="backgroundColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="CCb-QK-vcj" kind="show" id="jgc-Yb-9lW"/>
                                 </connections>
@@ -95,27 +124,30 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3eR-pj-pfc" firstAttribute="top" secondItem="RRm-c9-Axg" secondAttribute="top" constant="35" id="4JI-WE-wL4"/>
                             <constraint firstItem="RRm-c9-Axg" firstAttribute="bottom" secondItem="Nc8-nH-xzw" secondAttribute="bottom" id="5KD-st-uvL"/>
                             <constraint firstItem="Nc8-nH-xzw" firstAttribute="top" secondItem="yv2-PC-sLv" secondAttribute="bottom" id="5fA-Sa-F0v"/>
+                            <constraint firstItem="Nlq-g8-ryS" firstAttribute="top" secondItem="RRm-c9-Axg" secondAttribute="top" constant="20" id="67D-MC-d8A"/>
+                            <constraint firstItem="Nc8-nH-xzw" firstAttribute="top" secondItem="3eR-pj-pfc" secondAttribute="bottom" constant="35" id="Fxh-6H-tuJ"/>
                             <constraint firstItem="Nc8-nH-xzw" firstAttribute="leading" secondItem="RRm-c9-Axg" secondAttribute="leading" id="I76-rO-4Qw"/>
+                            <constraint firstItem="RRm-c9-Axg" firstAttribute="trailing" secondItem="3eR-pj-pfc" secondAttribute="trailing" constant="20" id="JzO-6f-DeR"/>
                             <constraint firstItem="Nc8-nH-xzw" firstAttribute="centerY" secondItem="dQy-fv-ps3" secondAttribute="centerY" multiplier="1.65" id="KKs-d2-aLN"/>
+                            <constraint firstItem="Nlq-g8-ryS" firstAttribute="leading" secondItem="RRm-c9-Axg" secondAttribute="leading" constant="10" id="XXi-Gw-9Ip"/>
                             <constraint firstItem="yv2-PC-sLv" firstAttribute="leading" secondItem="RRm-c9-Axg" secondAttribute="leading" id="dOT-h0-qGq"/>
-                            <constraint firstItem="d5c-iM-m7y" firstAttribute="top" secondItem="RRm-c9-Axg" secondAttribute="top" constant="10" id="eXK-CI-xIE"/>
                             <constraint firstItem="yv2-PC-sLv" firstAttribute="top" secondItem="dQy-fv-ps3" secondAttribute="top" id="fiP-iQ-iHw"/>
                             <constraint firstItem="Nc8-nH-xzw" firstAttribute="centerX" secondItem="dQy-fv-ps3" secondAttribute="centerX" id="gi5-Mt-0J1"/>
-                            <constraint firstItem="d5c-iM-m7y" firstAttribute="leading" secondItem="RRm-c9-Axg" secondAttribute="leading" constant="10" id="oAT-mj-9m4"/>
                             <constraint firstItem="RRm-c9-Axg" firstAttribute="trailing" secondItem="Nc8-nH-xzw" secondAttribute="trailing" id="rog-ST-ZH1"/>
-                            <constraint firstItem="RRm-c9-Axg" firstAttribute="trailing" secondItem="3eR-pj-pfc" secondAttribute="trailing" constant="10" id="u2u-hQ-WgC"/>
                             <constraint firstItem="Nc8-nH-xzw" firstAttribute="centerX" secondItem="yv2-PC-sLv" secondAttribute="centerX" id="wGY-Qm-PzA"/>
                             <constraint firstItem="yv2-PC-sLv" firstAttribute="trailing" secondItem="RRm-c9-Axg" secondAttribute="trailing" id="zzm-Vz-i6i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RRm-c9-Axg"/>
                     </view>
                     <connections>
+                        <outlet property="LabelsStackView" destination="Nlq-g8-ryS" id="a7l-6g-MWI"/>
                         <outlet property="barCrawlDateLabel" destination="d5c-iM-m7y" id="7uJ-yi-a6r"/>
+                        <outlet property="barCrawlDistanceLabel" destination="ORp-I3-SBk" id="lex-Ga-f3L"/>
                         <outlet property="listOfBarsTableView" destination="Nc8-nH-xzw" id="Bta-nb-4VM"/>
                         <outlet property="mapView" destination="yv2-PC-sLv" id="XVm-b6-Coc"/>
+                        <outlet property="myCrawlsButton" destination="3eR-pj-pfc" id="KHJ-0h-tm4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="025-jA-Pzm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -131,4 +163,15 @@
             <point key="canvasLocation" x="688" y="173"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="backgroundColor">
+            <color red="0.11372549019607843" green="0.13725490196078433" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightBlue">
+            <color red="0.60392156862745094" green="0.84705882352941175" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="opaqueWhite">
+            <color red="1" green="1" blue="1" alpha="0.4779999852180481" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
