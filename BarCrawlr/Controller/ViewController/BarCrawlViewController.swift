@@ -61,10 +61,11 @@ class BarCrawlViewController: UIViewController {
     }
     
     func createAnnotations(barsInCrawl: [Bar]) {
-        for bars in barsInCrawl {
-            let annotations = MKPointAnnotation()
-            annotations.title = bars.name
-            annotations.coordinate = CLLocationCoordinate2D(latitude: bars.latitude, longitude: bars.longitude)
+        for (index, bar) in barsInCrawl.enumerated() {
+            let annotations = customPin(coordinate: CLLocationCoordinate2D(latitude: bar.latitude, longitude: bar.longitude), title: bar.name, subtitle: "Stop number \(index + 1)")
+            if index == 0 {
+                annotations.subtitle = "First stop"
+            }
             mapView.addAnnotation(annotations)
         }
     }
@@ -100,7 +101,7 @@ class BarCrawlViewController: UIViewController {
             let region = MKCoordinateRegion(center: centerCoordinate, span: span)
             self.mapView.setRegion(region, animated: true)
         }
-        barCrawlDistanceLabel.text = "\((distance * 0.000621371).rounded())mi"
+        barCrawlDistanceLabel.text = "\(Int((distance * 0.000621371).rounded())) mi"
     }
     
     func createDirectionRequest() -> MKDirections.Request {
@@ -194,6 +195,18 @@ extension BarCrawlViewController: MKMapViewDelegate {
         renderer.fillColor = .lightBlue
         return renderer
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        let reuseIdentifier = "pin"
+        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        annotationView.canShowCallout = true
+        annotationView.image = #imageLiteral(resourceName: "BarCrawlrAnnotation")
+        
+        return annotationView
+    }
 }
 
 extension BarCrawlViewController {
@@ -205,3 +218,5 @@ extension BarCrawlViewController {
         LabelsStackView.cornerRadius(8)
     }
 }
+
+

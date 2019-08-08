@@ -68,7 +68,7 @@ class HomePageViewController: UIViewController, CAAnimationDelegate {
         }
         
         let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
-        gradientChangeAnimation.duration = 6.0
+        gradientChangeAnimation.duration = 5.0
         gradientChangeAnimation.toValue = gradientSet[currentGradient]
         gradientChangeAnimation.fillMode = CAMediaTimingFillMode.forwards
         gradientChangeAnimation.isRemovedOnCompletion = false

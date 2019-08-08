@@ -38,6 +38,7 @@ class CreateBarCrawlViewController: UIViewController {
         locationManager.delegate = self
         listOfBarsTableView.delegate = self
         listOfBarsTableView.dataSource = self
+        mapView.delegate = self
         listOfBarsTableView.estimatedRowHeight = UITableView.automaticDimension
         CoreLocationController.shared.activateLocationServices()
         getMyRegion()
@@ -75,9 +76,7 @@ class CreateBarCrawlViewController: UIViewController {
         mapView.removeAnnotations(mapView.annotations)
         guard let barsInBarCrawl = barCrawl?.bars else {return}
         for bars in barsInBarCrawl {
-            let annotations = MKPointAnnotation()
-            annotations.title = bars.name
-            annotations.coordinate = CLLocationCoordinate2D(latitude: bars.latitude, longitude: bars.longitude)
+            let annotations = customPin(coordinate: CLLocationCoordinate2D(latitude: bars.latitude, longitude: bars.longitude), title: bars.name, subtitle: bars.address)
             let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
             let viewRegion = MKCoordinateRegion(center: annotations.coordinate, span: span)
             mapView.setRegion(viewRegion, animated: true)
@@ -484,6 +483,20 @@ extension CreateBarCrawlViewController: BarSearchResultsTableViewCellDelegate {
             }
         }
         showDetailView()
+    }
+}
+
+extension CreateBarCrawlViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        let reuseIdentifier = "pin"
+        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        annotationView.canShowCallout = true
+        annotationView.image = #imageLiteral(resourceName: "BarCrawlrAnnotation")
+        
+        return annotationView
     }
 }
 
