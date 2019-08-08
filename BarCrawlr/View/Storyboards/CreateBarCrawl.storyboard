@@ -338,6 +338,17 @@
                                     <segue destination="nTp-OU-nxo" kind="show" id="nSp-ic-9A9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select atleast 2 bars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZI-6K-gnO">
+                                <rect key="frame" x="220" y="104" width="174" height="19"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="174" id="6pu-7E-i4h"/>
+                                    <constraint firstAttribute="height" constant="19" id="WSh-Xo-Ffh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -348,11 +359,13 @@
                             <constraint firstItem="87q-tP-SV7" firstAttribute="leading" secondItem="xF8-jF-lOJ" secondAttribute="leading" id="Htn-q3-oYI"/>
                             <constraint firstItem="87q-tP-SV7" firstAttribute="top" secondItem="f9W-eF-UqN" secondAttribute="bottom" id="L0Z-Rw-0sF"/>
                             <constraint firstItem="zK6-Xl-6RH" firstAttribute="top" secondItem="87q-tP-SV7" secondAttribute="bottom" id="Lka-52-tJe"/>
+                            <constraint firstItem="xF8-jF-lOJ" firstAttribute="trailing" secondItem="uZI-6K-gnO" secondAttribute="trailing" constant="20" id="MpJ-II-AKd"/>
                             <constraint firstItem="f9W-eF-UqN" firstAttribute="top" secondItem="sC8-Ku-ham" secondAttribute="top" id="Pa7-nD-hwv"/>
                             <constraint firstItem="NFv-TY-fw7" firstAttribute="top" secondItem="xF8-jF-lOJ" secondAttribute="top" constant="20" id="SEQ-Ed-hy5"/>
                             <constraint firstItem="f9W-eF-UqN" firstAttribute="trailing" secondItem="xF8-jF-lOJ" secondAttribute="trailing" id="Suh-sO-9LZ"/>
                             <constraint firstItem="f9W-eF-UqN" firstAttribute="leading" secondItem="xF8-jF-lOJ" secondAttribute="leading" id="ZTD-nL-sKC"/>
                             <constraint firstItem="xF8-jF-lOJ" firstAttribute="trailing" secondItem="GpZ-Ng-tZF" secondAttribute="trailing" constant="20" id="bXR-I3-UMc"/>
+                            <constraint firstItem="uZI-6K-gnO" firstAttribute="top" secondItem="GpZ-Ng-tZF" secondAttribute="bottom" constant="8" id="eZL-in-DJp"/>
                             <constraint firstItem="GpZ-Ng-tZF" firstAttribute="top" secondItem="xF8-jF-lOJ" secondAttribute="top" constant="20" id="h5U-Cp-A4E"/>
                             <constraint firstItem="zK6-Xl-6RH" firstAttribute="leading" secondItem="xF8-jF-lOJ" secondAttribute="leading" id="nnd-TP-VqO"/>
                             <constraint firstItem="87q-tP-SV7" firstAttribute="trailing" secondItem="xF8-jF-lOJ" secondAttribute="trailing" id="xcC-VX-rde"/>
@@ -367,6 +380,7 @@
                         <outlet property="listOfBarsTableView" destination="zK6-Xl-6RH" id="2ae-eI-ijs"/>
                         <outlet property="mapView" destination="f9W-eF-UqN" id="jSC-oR-CK3"/>
                         <outlet property="searchBar" destination="87q-tP-SV7" id="jT5-0i-VSU"/>
+                        <outlet property="warningLabel" destination="uZI-6K-gnO" id="H4X-Dl-0L3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQ6-2x-N53" userLabel="First Responder" sceneMemberID="firstResponder"/>

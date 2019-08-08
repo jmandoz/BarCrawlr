@@ -72,5 +72,6 @@ extension NameBarCrawlViewController {
         nameCrawlLabel.textColor = .lightBlue
         descriptionLabel.textColor = .lightBlue
         pickDateLabel.textColor = .lightBlue
+        crawlDatePicker.minimumDate = Date()
     }
 }

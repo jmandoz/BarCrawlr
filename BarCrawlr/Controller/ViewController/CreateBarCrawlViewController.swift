@@ -17,6 +17,7 @@ class CreateBarCrawlViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var warningLabel: UILabel!
     
     //CLLocation Manager
     let locationManager = CoreLocationController.shared.locationManager
@@ -411,10 +412,17 @@ extension CreateBarCrawlViewController: UITableViewDelegate, UITableViewDataSour
     
     //Segue function
     func presentBarCrawlVC(barCrawl: BarCrawl) {
+        if barCrawl.bars.count >= 2 {
         let storyboard = UIStoryboard(name: "BarCrawlView", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "BarCrawlVC") as? BarCrawlViewController else {return}
         viewController.barCrawlLandingPad = barCrawl
         self.present(viewController, animated: true)
+        } else {
+                self.warningLabel.alpha = 1
+            UIView.animate(withDuration: 7) {
+                self.warningLabel.alpha = 0
+            }
+        }
     }
     
     func findBarsFromCurrentLocation(searchTerm: String) {
@@ -521,5 +529,6 @@ extension CreateBarCrawlViewController {
         confirmButton.cornerRadius(8)
         confirmButton.setTitleColor(.mainBackground, for: .normal)
         listOfBarsTableView.backgroundColor = .mainBackground
+        warningLabel.alpha = 0
     }
 }
