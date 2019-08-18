@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z3K-0J-xQs">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Invite Guests View Controller-->
+        <scene sceneID="bCw-YP-FfO">
+            <objects>
+                <viewController storyboardIdentifier="InviteGuestsVC" id="Z3K-0J-xQs" customClass="InviteGuestsViewController" customModule="BarCrawlr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ysw-Ac-xPh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invite Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9P-nK-XIS">
+                                <rect key="frame" x="156" y="77" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hca-EK-TP0">
+                                <rect key="frame" x="0.0" y="106" width="414" height="756"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="65" id="7Ft-xJ-kRr" customClass="InvitesTableViewCell" customModule="BarCrawlr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Ft-xJ-kRr" id="4Kx-Vm-7Xc">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O63-zm-PWm">
+                                                    <rect key="frame" x="20" y="22" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="usernameLabel" destination="O63-zm-PWm" id="pGs-mf-zeV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Et-ue-NsM" customClass="BarCrawlButton" customModule="BarCrawlr" customModuleProvider="target">
+                                <rect key="frame" x="372" y="76" width="22" height="22"/>
+                                <connections>
+                                    <action selector="addGuestButtonTapped:" destination="Z3K-0J-xQs" eventType="touchUpInside" id="eMo-H9-bhB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hca-EK-TP0" firstAttribute="top" secondItem="V9P-nK-XIS" secondAttribute="bottom" constant="8" id="96D-h0-Jw1"/>
+                            <constraint firstItem="Wz7-uI-W0u" firstAttribute="bottom" secondItem="hca-EK-TP0" secondAttribute="bottom" id="Dlv-4g-mc0"/>
+                            <constraint firstItem="Wz7-uI-W0u" firstAttribute="trailing" secondItem="8Et-ue-NsM" secondAttribute="trailing" constant="20" id="HkU-wq-Xfl"/>
+                            <constraint firstItem="hca-EK-TP0" firstAttribute="top" secondItem="8Et-ue-NsM" secondAttribute="bottom" constant="8" id="L3h-yQ-apv"/>
+                            <constraint firstItem="V9P-nK-XIS" firstAttribute="leading" secondItem="Wz7-uI-W0u" secondAttribute="leading" constant="156" id="MTp-zH-k66"/>
+                            <constraint firstItem="hca-EK-TP0" firstAttribute="leading" secondItem="Wz7-uI-W0u" secondAttribute="leading" id="R4Z-Ln-6wI"/>
+                            <constraint firstItem="Wz7-uI-W0u" firstAttribute="trailing" secondItem="hca-EK-TP0" secondAttribute="trailing" id="dQH-vH-Ijv"/>
+                            <constraint firstItem="Wz7-uI-W0u" firstAttribute="trailing" secondItem="V9P-nK-XIS" secondAttribute="trailing" constant="156" id="qGo-bM-j2K"/>
+                            <constraint firstItem="V9P-nK-XIS" firstAttribute="top" secondItem="Wz7-uI-W0u" secondAttribute="top" constant="33" id="xGx-AT-kmQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wz7-uI-W0u"/>
+                    </view>
+                    <connections>
+                        <outlet property="addInviteButton" destination="8Et-ue-NsM" id="N2q-hQ-RyG"/>
+                        <outlet property="guestListTableView" destination="hca-EK-TP0" id="WcO-sP-L0u"/>
+                        <outlet property="inviteTableView" destination="hca-EK-TP0" id="8O1-8f-amz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r2Y-di-yaa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66.666666666666671" y="147.99107142857142"/>
+        </scene>
+    </scenes>
+</document>

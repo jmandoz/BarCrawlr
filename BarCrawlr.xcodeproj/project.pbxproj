@@ -39,10 +39,14 @@
 		A477C90A22EE0668001CD1E9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A477C90922EE0668001CD1E9 /* Home.storyboard */; };
 		A477C90C22EE07E5001CD1E9 /* CreateBarCrawlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C90B22EE07E5001CD1E9 /* CreateBarCrawlViewController.swift */; };
 		A477C91022EE986C001CD1E9 /* BarSearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A477C90F22EE986C001CD1E9 /* BarSearchResultsTableViewCell.swift */; };
+		A49F0D84230112B30014DAAE /* NoIcloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49F0D83230112B30014DAAE /* NoIcloudViewController.swift */; };
 		A4CF040622FB35250073898A /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CF040522FB35250073898A /* StyleGuide.swift */; };
 		A4CF040A22FB3A400073898A /* BarCrawlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CF040922FB3A400073898A /* BarCrawlButton.swift */; };
 		A4CF040C22FB412C0073898A /* BarCrawlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CF040B22FB412C0073898A /* BarCrawlTextField.swift */; };
 		A4CF041022FC874D0073898A /* CustomAnnotaion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CF040F22FC874D0073898A /* CustomAnnotaion.swift */; };
+		A4CF041222FDE27A0073898A /* InviteGuests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4CF041122FDE27A0073898A /* InviteGuests.storyboard */; };
+		A4CF041422FDE2DA0073898A /* InviteGuestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CF041322FDE2DA0073898A /* InviteGuestsViewController.swift */; };
+		A4CF041622FE07330073898A /* InvitesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CF041522FE07330073898A /* InvitesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,10 +85,14 @@
 		A477C90922EE0668001CD1E9 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A477C90B22EE07E5001CD1E9 /* CreateBarCrawlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBarCrawlViewController.swift; sourceTree = "<group>"; };
 		A477C90F22EE986C001CD1E9 /* BarSearchResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarSearchResultsTableViewCell.swift; sourceTree = "<group>"; };
+		A49F0D83230112B30014DAAE /* NoIcloudViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoIcloudViewController.swift; sourceTree = "<group>"; };
 		A4CF040522FB35250073898A /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		A4CF040922FB3A400073898A /* BarCrawlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCrawlButton.swift; sourceTree = "<group>"; };
 		A4CF040B22FB412C0073898A /* BarCrawlTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCrawlTextField.swift; sourceTree = "<group>"; };
 		A4CF040F22FC874D0073898A /* CustomAnnotaion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotaion.swift; sourceTree = "<group>"; };
+		A4CF041122FDE27A0073898A /* InviteGuests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InviteGuests.storyboard; sourceTree = "<group>"; };
+		A4CF041322FDE2DA0073898A /* InviteGuestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteGuestsViewController.swift; sourceTree = "<group>"; };
+		A4CF041522FE07330073898A /* InvitesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +168,7 @@
 				A477C90F22EE986C001CD1E9 /* BarSearchResultsTableViewCell.swift */,
 				A42264AA22F5DE7E00E4739B /* BarCrawlViewTableViewCell.swift */,
 				A42264B222F6209500E4739B /* MyCrawlsTableViewCell.swift */,
+				A4CF041522FE07330073898A /* InvitesTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +193,7 @@
 				A42264A022F29BC800E4739B /* CreateBarCrawl.storyboard */,
 				A42264A622F4E43F00E4739B /* BarCrawlView.storyboard */,
 				A42264B022F61CD000E4739B /* MyCrawls.storyboard */,
+				A4CF041122FDE27A0073898A /* InviteGuests.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -211,12 +221,14 @@
 			isa = PBXGroup;
 			children = (
 				A477C8ED22EAB0AF001CD1E9 /* UserLogInViewController.swift */,
+				A49F0D83230112B30014DAAE /* NoIcloudViewController.swift */,
 				A477C8F122EAB33B001CD1E9 /* SignUpViewController.swift */,
 				A477C90522ED4A3D001CD1E9 /* HomePageViewController.swift */,
 				A422649E22F2543C00E4739B /* NameBarCrawlViewController.swift */,
 				A477C90B22EE07E5001CD1E9 /* CreateBarCrawlViewController.swift */,
 				A42264A822F5DE1B00E4739B /* BarCrawlViewController.swift */,
 				A42264B622F620F000E4739B /* MyCrawlsViewController.swift */,
+				A4CF041322FDE2DA0073898A /* InviteGuestsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -319,6 +331,7 @@
 				A477C8D522E91522001CD1E9 /* LaunchScreen.storyboard in Resources */,
 				A42264B122F61CD000E4739B /* MyCrawls.storyboard in Resources */,
 				A477C8F022EAB211001CD1E9 /* Default-568h@2x.png in Resources */,
+				A4CF041222FDE27A0073898A /* InviteGuests.storyboard in Resources */,
 				A477C90A22EE0668001CD1E9 /* Home.storyboard in Resources */,
 				A477C8D222E91522001CD1E9 /* Assets.xcassets in Resources */,
 				A42264A722F4E44000E4739B /* BarCrawlView.storyboard in Resources */,
@@ -333,13 +346,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A42264B722F620F000E4739B /* MyCrawlsViewController.swift in Sources */,
+				A4CF041622FE07330073898A /* InvitesTableViewCell.swift in Sources */,
 				A477C8F622EBD24C001CD1E9 /* UserController.swift in Sources */,
 				A4CF040622FB35250073898A /* StyleGuide.swift in Sources */,
 				A42264AF22F600E300E4739B /* DateExtension.swift in Sources */,
 				A477C8EE22EAB0AF001CD1E9 /* UserLogInViewController.swift in Sources */,
 				A422649C22F21FA300E4739B /* BarCrawlController.swift in Sources */,
+				A49F0D84230112B30014DAAE /* NoIcloudViewController.swift in Sources */,
 				A477C8E422E91645001CD1E9 /* User.swift in Sources */,
 				A42264A922F5DE1B00E4739B /* BarCrawlViewController.swift in Sources */,
+				A4CF041422FDE2DA0073898A /* InviteGuestsViewController.swift in Sources */,
 				A477C8F222EAB33B001CD1E9 /* SignUpViewController.swift in Sources */,
 				A42264B322F6209500E4739B /* MyCrawlsTableViewCell.swift in Sources */,
 				A477C8F422EBCD92001CD1E9 /* CloudKitController.swift in Sources */,
@@ -500,6 +516,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZLX8VSJT3;
 				INFOPLIST_FILE = "$(SRCROOT)/BarCrawlr/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -519,6 +536,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZLX8VSJT3;
 				INFOPLIST_FILE = "$(SRCROOT)/BarCrawlr/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

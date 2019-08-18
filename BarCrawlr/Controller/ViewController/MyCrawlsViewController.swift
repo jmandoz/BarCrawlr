@@ -40,9 +40,17 @@ class MyCrawlsViewController: UIViewController {
             destinationVC?.barCrawlLandingPad = selectedBarCrawl
         }
     }
+    
+    func presentInviteVC(barCrawl: BarCrawl) {
+        let storyboard = UIStoryboard(name: "InviteGuests", bundle: nil)
+        guard let viewController =  storyboard.instantiateViewController(withIdentifier: "InviteGuestsVC") as? InviteGuestsViewController else {return}
+        viewController.barCrawlLanding = barCrawl
+        self.present(viewController, animated: true)
+    }
 }
 
-extension MyCrawlsViewController: UITableViewDelegate, UITableViewDataSource {
+extension MyCrawlsViewController: UITableViewDelegate, UITableViewDataSource, MyCrawlsTableViewCellDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let userCrawls = userBarCrawls.count
         return userCrawls
@@ -63,13 +71,18 @@ extension MyCrawlsViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "myCrawlsCell", for: indexPath) as? MyCrawlsTableViewCell else {return UITableViewCell()}
-        let userCrawls = userBarCrawls[indexPath.row]
-        cell.nameLabel.text = userCrawls.name
-        cell.descriptionLabel.text = userCrawls.description
-        cell.dateAndTimeLabel.text = "\(userCrawls.crawlDate.formatDate())"
+        let userCrawl = userBarCrawls[indexPath.row]
+        cell.barCrawlLanding = userCrawl
+        cell.delegate = self
         return cell
+    }
+    
+    func inviteGuestsButtonTapped(cell: MyCrawlsTableViewCell) {
+        guard let selectedCrawl = cell.barCrawlLanding else {return}
+        presentInviteVC(barCrawl: selectedCrawl)
     }
 }
 
@@ -79,3 +92,5 @@ extension MyCrawlsViewController {
         myCrawlsTableView.backgroundColor = .mainBackground
     }
 }
+
+

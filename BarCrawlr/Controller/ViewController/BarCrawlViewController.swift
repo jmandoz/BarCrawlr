@@ -66,6 +66,7 @@ class BarCrawlViewController: UIViewController {
             if index == 0 {
                 annotations.subtitle = "First stop"
             }
+            
             mapView.addAnnotation(annotations)
         }
     }
@@ -94,13 +95,12 @@ class BarCrawlViewController: UIViewController {
                 self.mapView.addOverlay(route.polyline, level: .aboveRoads)
                 self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
             }
-            
-            guard let centerLatitude = locations.first?.latitude, let centerLongitude = locations.first?.longitude else {return}
-            let centerCoordinate = CLLocationCoordinate2D(latitude: centerLatitude, longitude: centerLongitude)
-            let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-            let region = MKCoordinateRegion(center: centerCoordinate, span: span)
-            self.mapView.setRegion(region, animated: true)
         }
+        guard let centerLatitude = locations.first?.latitude, let centerLongitude = locations.first?.longitude else {return}
+        let centerCoordinate = CLLocationCoordinate2D(latitude: centerLatitude, longitude: centerLongitude)
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region = MKCoordinateRegion(center: centerCoordinate, span: span)
+        self.mapView.setRegion(region, animated: true)
         barCrawlDistanceLabel.text = "\(Int((distance * 0.000621371).rounded())) mi"
     }
     
