@@ -6,7 +6,7 @@
 //  Copyright © 2019 Jason Mandozzi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CloudKit
 
 class UserController {
@@ -20,10 +20,10 @@ class UserController {
     //CRUD Functions
     
     //Create
-    func createUserWith(userName: String, email: String, password: String, completion: @escaping (User?) -> Void) {
+    func createUserWith(userName: String, email: String, proPic: UIImage, completion: @escaping (User?) -> Void) {
         CloudKitController.shared.fetchAppleUserReference { (reference) in
             guard let appleUserReference = reference else {completion(nil); return}
-            let newUser = User(username: userName, password: password, email: email, appleUserReference: appleUserReference)
+            let newUser = User(proPic: proPic, username: userName, email: email, appleUserReference: appleUserReference)
             let userRecord = CKRecord(user: newUser)
             CloudKitController.shared.save(record: userRecord, database: CloudKitController.shared.publicDB){ (record) in
                 guard let record = record, let user = User(record: record)
@@ -45,5 +45,4 @@ class UserController {
             }
         }
     }
-    
 }

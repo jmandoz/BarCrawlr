@@ -35,6 +35,7 @@ class BarCrawlController {
         }
     }
     
+    
     func addBarTo(barCrawl: BarCrawl, name: String, address: String, latitude: Double, longitude: Double, rating: Float, completion: @escaping (Bar?) -> Void) {
         let bar = Bar(name: name, address: address, latitude: latitude, longitude: longitude, rating: rating, barCrawl: barCrawl)
         barCrawl.bars.append(bar)

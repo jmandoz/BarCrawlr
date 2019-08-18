@@ -29,22 +29,6 @@ class CloudKitController {
     }
     
     //Read
-    func checkForiCloudUser() {
-        CKContainer.default().accountStatus { (status, error) in
-            if let error = error {
-                print("\(error.localizedDescription)")
-            } else {
-                switch status {
-                case .available : print("available")
-                case .restricted : print("restricted")
-                case .noAccount : print("No Account Exists")
-                case .couldNotDetermine : print("Account could not be determined")
-                @unknown default:
-                    fatalError()
-                }
-            }
-        }
-    }
     
     func fetchAppleUserReference(completion: @escaping (CKRecord.Reference?) -> Void) {
         CKContainer.default().fetchUserRecordID { (appleUserReferenceID, error) in
@@ -60,7 +44,6 @@ class CloudKitController {
     }
     
     func fetchSingleRecord(ofType type: String, withPredicate predicate: NSPredicate, database: CKDatabase, completion: @escaping ([CKRecord]?) -> Void) {
-        let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: type, predicate: predicate)
         database.perform(query, inZoneWith: nil) { (record, error) in
             if let error = error {

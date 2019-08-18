@@ -48,4 +48,15 @@ extension UIView {
         self.layer.masksToBounds = false
         self.layer.shouldRasterize = true
     }
+    
+//    func proPicShadow() {
+//        self.clipsToBounds = true
+//        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
+//        self.layer.shadowColor = UIColor.black.cgColor
+//        self.layer.shadowOffset = .zero
+//        self.layer.shadowOpacity = 0.8
+//        self.layer.shadowRadius = 10
+//        self.layer.masksToBounds = false
+//        self.layer.shouldRasterize = true
+//    }
 }

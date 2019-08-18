@@ -286,16 +286,19 @@ extension CreateBarCrawlViewController: UITableViewDelegate, UITableViewDataSour
             if bars.count == 0 {
                 titleLabel.alpha = 0
             } else {
-                UIView.animate(withDuration: 0.5) {
-                    titleLabel.alpha = 1
-                    titleLabel.text = " Bars Selected ▾"
-                    titleLabel.backgroundColor = .opaqueLight
-                    titleLabel.textColor = .mainBackground
+                DispatchQueue.main.async {
+                    UIView.animate(withDuration: 0.5) {
+                        titleLabel.alpha = 1
+                        titleLabel.text = " Bars Selected ▾"
+                        titleLabel.backgroundColor = .opaqueLight
+                        titleLabel.textColor = .mainBackground
+                    }
                 }
             }
             return titleLabel
         case 1:
             let titleLabel = UILabel()
+            titleLabel.alpha = 1
             titleLabel.text = " Search Results"
             titleLabel.backgroundColor = .opaqueBackground
             titleLabel.textColor = .offWhite

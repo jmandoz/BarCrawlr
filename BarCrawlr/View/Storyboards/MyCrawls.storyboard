@@ -31,53 +31,73 @@
                                 <rect key="frame" x="0.0" y="106" width="414" height="756"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCrawlsCell" rowHeight="177" id="lY3-rF-tRE" customClass="MyCrawlsTableViewCell" customModule="BarCrawlr" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="177"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myCrawlsCell" rowHeight="113" id="lY3-rF-tRE" customClass="MyCrawlsTableViewCell" customModule="BarCrawlr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="113"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lY3-rF-tRE" id="X9o-NC-UWf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="176.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="112.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="V9e-RQ-FOh">
-                                                    <rect key="frame" x="20" y="11" width="374" height="155"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Lro-TK-xyp">
+                                                    <rect key="frame" x="15" y="10" width="384" height="92.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="BarCrawlName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjX-f6-6Uf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="94"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                            <color key="textColor" name="lightBlue"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DescriptionLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDa-fc-gxP">
-                                                            <rect key="frame" x="0.0" y="104" width="374" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" name="offWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNL-qN-eRF">
-                                                            <rect key="frame" x="0.0" y="134.5" width="374" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" name="offWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="V9e-RQ-FOh">
+                                                            <rect key="frame" x="0.0" y="0.0" width="384" height="92.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="BarCrawlName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjX-f6-6Uf">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="384" height="31.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                                    <color key="textColor" name="lightBlue"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DescriptionLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDa-fc-gxP">
+                                                                    <rect key="frame" x="0.0" y="41.5" width="384" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" name="offWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNL-qN-eRF">
+                                                                    <rect key="frame" x="0.0" y="72" width="384" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" name="offWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="EDa-fc-gxP" secondAttribute="trailing" id="It4-Cp-HZu"/>
+                                                                <constraint firstAttribute="trailing" secondItem="DjX-f6-6Uf" secondAttribute="trailing" id="iWx-7S-JaR"/>
+                                                                <constraint firstAttribute="trailing" secondItem="FNL-qN-eRF" secondAttribute="trailing" id="paP-pg-k5f"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gi-4V-ITb" customClass="BarCrawlButton" customModule="BarCrawlr" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="30" width="90" height="32.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="90" id="3EE-j4-iQc"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Guest List"/>
+                                                            <connections>
+                                                                <action selector="guestListButtonTapped:" destination="lY3-rF-tRE" eventType="touchUpInside" id="cQ2-bf-NZj"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="EDa-fc-gxP" secondAttribute="trailing" id="It4-Cp-HZu"/>
-                                                        <constraint firstAttribute="trailing" secondItem="DjX-f6-6Uf" secondAttribute="trailing" id="iWx-7S-JaR"/>
-                                                        <constraint firstAttribute="trailing" secondItem="FNL-qN-eRF" secondAttribute="trailing" id="paP-pg-k5f"/>
+                                                        <constraint firstItem="2gi-4V-ITb" firstAttribute="top" secondItem="Lro-TK-xyp" secondAttribute="top" constant="30" id="T7I-IK-5ap"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2gi-4V-ITb" secondAttribute="bottom" constant="30" id="Zy6-Tw-hVm"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="V9e-RQ-FOh" firstAttribute="top" secondItem="X9o-NC-UWf" secondAttribute="topMargin" id="Csg-OI-eqe"/>
-                                                <constraint firstItem="V9e-RQ-FOh" firstAttribute="trailing" secondItem="X9o-NC-UWf" secondAttribute="trailingMargin" id="Yxw-6h-Ri8"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="V9e-RQ-FOh" secondAttribute="bottom" id="iiv-mH-ZgJ"/>
-                                                <constraint firstItem="V9e-RQ-FOh" firstAttribute="leading" secondItem="X9o-NC-UWf" secondAttribute="leadingMargin" id="nQl-ur-uR3"/>
+                                                <constraint firstAttribute="bottom" secondItem="Lro-TK-xyp" secondAttribute="bottom" constant="10" id="dga-QI-pzl"/>
+                                                <constraint firstItem="Lro-TK-xyp" firstAttribute="leading" secondItem="X9o-NC-UWf" secondAttribute="leading" constant="15" id="f4s-vA-VaW"/>
+                                                <constraint firstAttribute="trailing" secondItem="Lro-TK-xyp" secondAttribute="trailing" constant="15" id="q81-qu-21R"/>
+                                                <constraint firstItem="Lro-TK-xyp" firstAttribute="top" secondItem="X9o-NC-UWf" secondAttribute="top" constant="10" id="wfh-Pc-J5Q"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="backgroundColor"/>
                                         <connections>
                                             <outlet property="dateAndTimeLabel" destination="FNL-qN-eRF" id="dhf-wn-7at"/>
                                             <outlet property="descriptionLabel" destination="EDa-fc-gxP" id="TE9-zK-oGF"/>
+                                            <outlet property="guestListButton" destination="2gi-4V-ITb" id="9oX-vb-KMw"/>
                                             <outlet property="nameLabel" destination="DjX-f6-6Uf" id="5M7-Sa-Zi0"/>
                                             <segue destination="98R-MP-AjC" kind="show" identifier="toBarCrawlVC" id="olL-sT-5MZ"/>
                                         </connections>
