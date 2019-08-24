@@ -20,6 +20,8 @@ struct Bars: Codable {
     let rating: Float
     let coordinates: Coordinates
     let address: Location
+    let reviewCount: Int
+    let url: String
     
     private enum CodingKeys: String, CodingKey {
         case name
@@ -29,6 +31,8 @@ struct Bars: Codable {
         case rating
         case coordinates
         case address = "location"
+        case reviewCount = "review_count"
+        case url
     }
 }
 

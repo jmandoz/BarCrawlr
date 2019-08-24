@@ -13,10 +13,9 @@ import CloudKit
 class UserLogInViewController: UIViewController {
     
     @IBOutlet weak var signUpButton: BarCrawlButton!
-    
     @IBOutlet weak var beerIconImage: UIImageView!
-    
     @IBOutlet weak var fetchIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var skipSignUpButton: BarCrawlButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +31,19 @@ class UserLogInViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.fetchIndicator.alpha = 0
                     self.fetchIndicator.stopAnimating()
-                    UIView.animate(withDuration: 3, animations: {
+                    UIView.animate(withDuration: 2, animations: {
                         self.signUpButton.alpha = 1
+//                        self.skipSignUpButton.alpha = 1
                     })
                 }
             }
         }
         hideKeyboardWhenTappedAround()
+    }
+    
+    
+    @IBAction func skipSignUpButtonTapped(_ sender: Any) {
+        presentHomeView()
     }
     
     func presentHomeView() {
@@ -81,5 +86,6 @@ extension UserLogInViewController {
         beerIconImage.alpha = 0
         signUpButton.alpha = 0
         fetchIndicator.alpha = 0
+        skipSignUpButton.alpha = 0
     }
 }

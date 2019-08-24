@@ -28,6 +28,7 @@ class CreateBarCrawlViewController: UIViewController {
     //Sources of Truth
     var barCrawl: BarCrawl?
     var barItems: [Bars] = []
+    var url: String?
     
     //ViewDidLoad
     override func viewDidLoad() {
@@ -57,11 +58,40 @@ class CreateBarCrawlViewController: UIViewController {
         }
     }
     
+    func setYelpReviewImage(barRating: Float) {
+        switch barRating {
+        case 0.0:
+            self.starRatingImage.image = #imageLiteral(resourceName: "small_0")
+        case 1.0:
+            self.starRatingImage.image = #imageLiteral(resourceName: "small_1")
+        case 1.5:
+            self.starRatingImage.image = #imageLiteral(resourceName: "small_1_half")
+        case 2.0:
+            self.starRatingImage.image = #imageLiteral(resourceName: "small_2")
+        case 2.5:
+            self.starRatingImage.image = #imageLiteral(resourceName: "small_2_half")
+        case 3.0:
+            self.starRatingImage.image = #imageLiteral(resourceName: "small_3")
+        case 3.5:
+            self.starRatingImage.image = #imageLiteral(resourceName: "small_3_half")
+        case 4.0:
+            self.starRatingImage.image = #imageLiteral(resourceName: "small_4")
+        case 4.5:
+            self.starRatingImage.image = #imageLiteral(resourceName: "small_4_half")
+        case 5.0:
+            self.starRatingImage.image = #imageLiteral(resourceName: "small_5")
+        default:
+            self.starRatingImage.alpha = 0
+        }
+    }
+    
     override func loadView() {
         super.loadView()
         addAllSubviews()
         constrainView()
         setUpStackViews()
+        setUpRatingStackView()
+        setUpZipCodeStackView()
     }
     
     
@@ -89,6 +119,7 @@ class CreateBarCrawlViewController: UIViewController {
     func addAllSubviews() {
         self.view.addSubview(barDetailView)
         self.view.addSubview(labelStackView)
+        self.view.addSubview(ratingStackView)
         self.view.addSubview(nameDetailLabel)
         self.view.addSubview(addressDetailLabel)
         self.view.addSubview(cityAndStateDetailLabel)
@@ -96,6 +127,8 @@ class CreateBarCrawlViewController: UIViewController {
         self.view.addSubview(closeButton)
         self.view.addSubview(barImage)
         self.view.addSubview(visualEffectView)
+        self.view.addSubview(yelpButton)
+        self.view.addSubview(zipCodeStackView)
         
     }
     
@@ -103,12 +136,24 @@ class CreateBarCrawlViewController: UIViewController {
     func setUpStackViews() {
         labelStackView.translatesAutoresizingMaskIntoConstraints = false
         labelStackView.addArrangedSubview(barImage)
-        labelStackView.addArrangedSubview(nameDetailLabel)
+        labelStackView.addArrangedSubview(zipCodeStackView)
+        labelStackView.addArrangedSubview(ratingStackView)
         labelStackView.addArrangedSubview(addressDetailLabel)
         labelStackView.addArrangedSubview(cityAndStateDetailLabel)
         labelStackView.addArrangedSubview(zipCodeDetailLabel)
-        labelStackView.addArrangedSubview(ratingDetailLabel)
         labelStackView.addArrangedSubview(closeButton)
+    }
+    
+    func setUpRatingStackView() {
+        ratingStackView.translatesAutoresizingMaskIntoConstraints = false
+        ratingStackView.addArrangedSubview(starRatingImage)
+        ratingStackView.addArrangedSubview(ratingDetailLabel)
+    }
+    
+    func setUpZipCodeStackView() {
+        zipCodeStackView.translatesAutoresizingMaskIntoConstraints = false
+        zipCodeStackView.addArrangedSubview(nameDetailLabel)
+        zipCodeStackView.addArrangedSubview(yelpButton)
     }
     
     func barDetailPopUp() {
@@ -163,12 +208,37 @@ class CreateBarCrawlViewController: UIViewController {
         return stackView
     }()
     
+    let ratingStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.contentMode = .left
+        stackView.spacing = 0
+        return stackView
+    }()
+    
+    let zipCodeStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.contentMode = .left
+        stackView.spacing = 0
+        return stackView
+    }()
+    
     //ImageView
     let barImage: UIImageView = {
         let image = UIImageView()
         image.layer.cornerRadius = 7
         image.clipsToBounds = true
         image.contentMode = .scaleAspectFill
+        return image
+    }()
+    
+    let starRatingImage: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFit
+        image.contentMode = .left
         return image
     }()
     
@@ -210,6 +280,8 @@ class CreateBarCrawlViewController: UIViewController {
         let label = UILabel()
         label.text = "Rating"
         label.textAlignment = .left
+        label.contentMode = .left
+        label.font = label.font.withSize(12)
         label.textColor = .offWhite
         return label
     }()
@@ -226,21 +298,44 @@ class CreateBarCrawlViewController: UIViewController {
         return button
     }()
     
+    let yelpButton: UIButton = {
+        let button = UIButton()
+        button.setImage(#imageLiteral(resourceName: "yelpLogo"), for: .normal)
+        button.widthAnchor.constraint(equalToConstant: 70.0).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 34.0).isActive = true
+        return button
+    }()
+    
     
     
     //Button actions - detail view
-    @objc func closeButtonTapped(sender: UIButton) {
-        selectButton(sender)
+    @objc func buttonTapped(sender: UIButton) {
         switch sender {
         case closeButton:
+            selectButton(closeButton)
             closePopUp()
+        case yelpButton:
+            openUrl(urlStr: url)
         default:
             print("Button not found")
         }
     }
     
+    func openUrl(urlStr: String!) {
+        if let url = NSURL(string:urlStr) {
+            UIApplication.shared.open(url as URL, options: [:]) { (success) in
+                if success {
+                    print("URL Opened")
+                } else {
+                    print("couldn't open url")
+                }
+            }
+        }
+    }
+    
     func activateButton() {
-        closeButton.addTarget(self, action: #selector(closeButtonTapped(sender:)), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
+        yelpButton.addTarget(self, action: #selector(buttonTapped(sender:)), for: .touchUpInside)
     }
     
     func selectButton(_ button: UIButton) {
@@ -482,12 +577,16 @@ extension CreateBarCrawlViewController: BarSearchResultsTableViewCellDelegate {
     func detailsButtonTapped(cell: BarSearchResultsTableViewCell) {
         guard let city = cell.barCell?.address.city,
             let state = cell.barCell?.address.state,
-            let rating = cell.barCell?.rating else {return}
+            let rating = cell.barCell?.rating,
+            let reviewCount = cell.barCell?.reviewCount,
+            let yelpurl = cell.barCell?.url else {return}
+        setYelpReviewImage(barRating: rating)
         nameDetailLabel.text = cell.barCell?.name
         addressDetailLabel.text = cell.barCell?.address.physicalAddress
         cityAndStateDetailLabel.text = "\(city), \(state)"
         zipCodeDetailLabel.text = cell.barCell?.address.zipCode
-        ratingDetailLabel.text = "Rating: \(rating)"
+        ratingDetailLabel.text = "\(rating) based on \(reviewCount) reviews"
+        url = yelpurl
         BarController.shared.fetchBarImage(imageURL: cell.barCell?.imageURL) { (image) in
             DispatchQueue.main.async {
                 self.barImage.image = image
