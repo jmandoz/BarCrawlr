@@ -45,14 +45,23 @@
                                 </constraints>
                                 <color key="color" name="lightBlue"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Od-Um-fQ3" customClass="BarCrawlButton" customModule="BarCrawlr" customModuleProvider="target">
+                                <rect key="frame" x="163" y="629" width="88" height="30"/>
+                                <state key="normal" title="Skip Sign Up"/>
+                                <connections>
+                                    <action selector="skipSignUpButtonTapped:" destination="O94-U6-XMX" eventType="touchUpInside" id="WSQ-WO-8zb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0ji-OD-JBV" firstAttribute="centerY" secondItem="lu0-LL-IXz" secondAttribute="centerY" id="Et4-5d-5ga"/>
                             <constraint firstItem="HSg-nY-qak" firstAttribute="centerX" secondItem="lu0-LL-IXz" secondAttribute="centerX" id="SiU-cj-cUO"/>
                             <constraint firstItem="Rvk-N4-JFG" firstAttribute="centerX" secondItem="lu0-LL-IXz" secondAttribute="centerX" id="Srb-sf-B1i"/>
+                            <constraint firstItem="3Od-Um-fQ3" firstAttribute="centerX" secondItem="lu0-LL-IXz" secondAttribute="centerX" id="Tie-wA-x7R"/>
                             <constraint firstItem="Rvk-N4-JFG" firstAttribute="centerY" secondItem="lu0-LL-IXz" secondAttribute="centerY" multiplier="1.5" id="bmd-Vc-pwM"/>
                             <constraint firstItem="HSg-nY-qak" firstAttribute="centerY" secondItem="lu0-LL-IXz" secondAttribute="centerY" multiplier="0.6" id="ezg-vS-4LL"/>
+                            <constraint firstItem="3Od-Um-fQ3" firstAttribute="centerY" secondItem="lu0-LL-IXz" secondAttribute="centerY" multiplier="1.75" id="pid-96-M1Z"/>
                             <constraint firstItem="0ji-OD-JBV" firstAttribute="centerX" secondItem="lu0-LL-IXz" secondAttribute="centerX" id="ujo-ES-rI9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="155-bb-lgo"/>
@@ -63,6 +72,7 @@
                         <outlet property="beerIconImage" destination="HSg-nY-qak" id="1bp-bp-VYr"/>
                         <outlet property="fetchIndicator" destination="0ji-OD-JBV" id="MXf-RO-7m0"/>
                         <outlet property="signUpButton" destination="Rvk-N4-JFG" id="PNi-Y9-rgB"/>
+                        <outlet property="skipSignUpButton" destination="3Od-Um-fQ3" id="cd2-lr-cNV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0k-mW-I9O" userLabel="First Responder" sceneMemberID="firstResponder"/>

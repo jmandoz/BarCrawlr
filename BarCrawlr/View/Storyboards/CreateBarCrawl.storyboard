@@ -349,13 +349,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yelpLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Rp6-j3-c61">
-                                <rect key="frame" x="343" y="387" width="56" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="e7H-o4-ba7"/>
-                                    <constraint firstAttribute="width" constant="56" id="six-Ka-Wgv"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -363,7 +356,6 @@
                             <constraint firstItem="NFv-TY-fw7" firstAttribute="leading" secondItem="xF8-jF-lOJ" secondAttribute="leading" constant="20" id="6uY-za-GTi"/>
                             <constraint firstItem="zK6-Xl-6RH" firstAttribute="centerY" secondItem="sC8-Ku-ham" secondAttribute="centerY" multiplier="1.45" id="8Bb-bb-RP0"/>
                             <constraint firstItem="xF8-jF-lOJ" firstAttribute="bottom" secondItem="zK6-Xl-6RH" secondAttribute="bottom" id="8fJ-yd-4kC"/>
-                            <constraint firstItem="87q-tP-SV7" firstAttribute="top" secondItem="Rp6-j3-c61" secondAttribute="bottom" constant="15" id="F6Q-g0-c3Q"/>
                             <constraint firstItem="87q-tP-SV7" firstAttribute="leading" secondItem="xF8-jF-lOJ" secondAttribute="leading" id="Htn-q3-oYI"/>
                             <constraint firstItem="87q-tP-SV7" firstAttribute="top" secondItem="f9W-eF-UqN" secondAttribute="bottom" id="L0Z-Rw-0sF"/>
                             <constraint firstItem="zK6-Xl-6RH" firstAttribute="top" secondItem="87q-tP-SV7" secondAttribute="bottom" id="Lka-52-tJe"/>
@@ -371,7 +363,6 @@
                             <constraint firstItem="f9W-eF-UqN" firstAttribute="top" secondItem="sC8-Ku-ham" secondAttribute="top" id="Pa7-nD-hwv"/>
                             <constraint firstItem="NFv-TY-fw7" firstAttribute="top" secondItem="xF8-jF-lOJ" secondAttribute="top" constant="20" id="SEQ-Ed-hy5"/>
                             <constraint firstItem="f9W-eF-UqN" firstAttribute="trailing" secondItem="xF8-jF-lOJ" secondAttribute="trailing" id="Suh-sO-9LZ"/>
-                            <constraint firstItem="xF8-jF-lOJ" firstAttribute="trailing" secondItem="Rp6-j3-c61" secondAttribute="trailing" constant="15" id="Z1d-4u-muz"/>
                             <constraint firstItem="f9W-eF-UqN" firstAttribute="leading" secondItem="xF8-jF-lOJ" secondAttribute="leading" id="ZTD-nL-sKC"/>
                             <constraint firstItem="xF8-jF-lOJ" firstAttribute="trailing" secondItem="GpZ-Ng-tZF" secondAttribute="trailing" constant="20" id="bXR-I3-UMc"/>
                             <constraint firstItem="uZI-6K-gnO" firstAttribute="top" secondItem="GpZ-Ng-tZF" secondAttribute="bottom" constant="8" id="eZL-in-DJp"/>
@@ -398,7 +389,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="yelpLogo" width="160" height="82"/>
         <namedColor name="backgroundColor">
             <color red="0.11372549019607843" green="0.13725490196078433" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
