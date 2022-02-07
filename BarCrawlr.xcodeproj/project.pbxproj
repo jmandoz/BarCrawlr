@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C27495C27B0740E00A2D610 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C27495B27B0740E00A2D610 /* AccountView.swift */; };
+		4C27495F27B083FA00A2D610 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C27495E27B083FA00A2D610 /* TabBarController.swift */; };
+		4C27496327B087D700A2D610 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C27496227B087D700A2D610 /* AccountViewController.swift */; };
+		4C27496C27B09E0300A2D610 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C27496B27B09E0300A2D610 /* HomeViewController.swift */; };
 		A422649622F1005B00E4739B /* BarCrawl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A422649522F1005B00E4739B /* BarCrawl.swift */; };
 		A422649A22F1FD9400E4739B /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A422649922F1FD9400E4739B /* Bar.swift */; };
 		A422649C22F21FA300E4739B /* BarCrawlController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A422649B22F21FA300E4739B /* BarCrawlController.swift */; };
@@ -50,6 +54,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C27495B27B0740E00A2D610 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		4C27495E27B083FA00A2D610 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4C27496227B087D700A2D610 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		4C27496B27B09E0300A2D610 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A422649522F1005B00E4739B /* BarCrawl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCrawl.swift; sourceTree = "<group>"; };
 		A422649922F1FD9400E4739B /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		A422649B22F21FA300E4739B /* BarCrawlController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCrawlController.swift; sourceTree = "<group>"; };
@@ -107,6 +115,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C160241279A3EF000DC8E4A /* V2 */ = {
+			isa = PBXGroup;
+			children = (
+				4C27495D27B083A000A2D610 /* TabBar */,
+				4C160244279A3F5200DC8E4A /* MyAccount */,
+				4C160243279A3F2500DC8E4A /* HomePage */,
+				4C160242279A3F1500DC8E4A /* SignUp */,
+			);
+			path = V2;
+			sourceTree = "<group>";
+		};
+		4C160242279A3F1500DC8E4A /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				4C160245279A3F9200DC8E4A /* View */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		4C160243279A3F2500DC8E4A /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				4C27496B27B09E0300A2D610 /* HomeViewController.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		4C160244279A3F5200DC8E4A /* MyAccount */ = {
+			isa = PBXGroup;
+			children = (
+				4C27495B27B0740E00A2D610 /* AccountView.swift */,
+				4C27496227B087D700A2D610 /* AccountViewController.swift */,
+			);
+			path = MyAccount;
+			sourceTree = "<group>";
+		};
+		4C160245279A3F9200DC8E4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C27495D27B083A000A2D610 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				4C27495E27B083FA00A2D610 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		A477C8BE22E91520001CD1E9 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				A477C8E522E91A9A001CD1E9 /* BarCrawlr.entitlements */,
+				4C160241279A3EF000DC8E4A /* V2 */,
 				A477C8DF22E915A0001CD1E9 /* Model */,
 				A477C8DE22E91597001CD1E9 /* View */,
 				A477C8DD22E9158E001CD1E9 /* Controller */,
@@ -346,7 +406,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A42264B722F620F000E4739B /* MyCrawlsViewController.swift in Sources */,
+				4C27495F27B083FA00A2D610 /* TabBarController.swift in Sources */,
 				A4CF041622FE07330073898A /* InvitesTableViewCell.swift in Sources */,
+				4C27496C27B09E0300A2D610 /* HomeViewController.swift in Sources */,
 				A477C8F622EBD24C001CD1E9 /* UserController.swift in Sources */,
 				A4CF040622FB35250073898A /* StyleGuide.swift in Sources */,
 				A42264AF22F600E300E4739B /* DateExtension.swift in Sources */,
@@ -374,7 +436,9 @@
 				A477C8FC22ED2B45001CD1E9 /* SelectedBarsListTableViewCell.swift in Sources */,
 				A477C90422ED481C001CD1E9 /* CoreLocationController.swift in Sources */,
 				A477C91022EE986C001CD1E9 /* BarSearchResultsTableViewCell.swift in Sources */,
+				4C27495C27B0740E00A2D610 /* AccountView.swift in Sources */,
 				A477C8FA22ED1FBA001CD1E9 /* YelpData.swift in Sources */,
+				4C27496327B087D700A2D610 /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
